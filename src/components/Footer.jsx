@@ -150,9 +150,9 @@ export default function Footer() {
 
       {/* ── Bottom bar ── */}
       <div className="border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-1 text-center sm:text-left">
           <span className="text-white/35 text-xs">© 2024 MSS Charitable Trust. All rights reserved.</span>
-          <span className="text-white/35 text-xs">Registered under the Indian Trusts Act, 1882 · Reg. No. MSST/2024</span>
+          <span className="text-white/35 text-xs">Reg. No. MSST/2024 · Indian Trusts Act, 1882</span>
         </div>
       </div>
 

@@ -94,10 +94,10 @@ export default function Hero({ openDonate }) {
         </button>
 
         {/* Content */}
-        <div className="relative z-20 w-full px-8 sm:px-12 pb-14 sm:pb-20">
+        <div className="relative z-20 w-full px-5 sm:px-10 pb-12 sm:pb-20">
           <h1
             key={cur}
-            className="hero-headline text-white font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight mb-8 max-w-4xl"
+            className="hero-headline text-white font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 sm:mb-8 max-w-4xl"
             style={{ textShadow: '0 2px 20px rgba(0,0,0,0.45)' }}
           >
             {slides[cur].headline}

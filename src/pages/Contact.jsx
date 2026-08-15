@@ -91,13 +91,13 @@ export default function Contact() {
             {/* Quick contact pills */}
             <div className="flex flex-wrap gap-3">
               {[
-                { icon: '📞', text: '+91 98663 76367' },
-                { icon: '✉️', text: 'msscharitabletrust4u@gmail.com' },
-                { icon: '📍', text: 'Guntur, Andhra Pradesh' },
+                { icon: '📞', text: '+91 98663 76367', always: true },
+                { icon: '✉️', text: 'msscharitabletrust4u@gmail.com', always: false },
+                { icon: '📍', text: 'Guntur, Andhra Pradesh', always: true },
               ].map((c, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2"
+                  className={`flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 ${c.always ? '' : 'hidden sm:flex'}`}
                 >
                   <span className="text-sm leading-none">{c.icon}</span>
                   <span className="text-white/80 text-xs font-medium">{c.text}</span>

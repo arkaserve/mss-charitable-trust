@@ -110,9 +110,9 @@ export default function OurWork() {
           }}
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,34,24,0.96) 0%, rgba(8,34,24,0.65) 50%, rgba(8,34,24,0.2) 100%)' }} />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-14 w-full">
+        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 pb-12 sm:pb-14 w-full">
           <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-3">Our Work</div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-black leading-tight mb-4 max-w-3xl" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.4)' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-black leading-tight mb-4 max-w-3xl" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.4)' }}>
             What We Do
           </h1>
           <p className="text-white/70 text-base max-w-2xl leading-relaxed">
