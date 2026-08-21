@@ -222,17 +222,17 @@ export default function Home({ openDonate }) {
               <div className="space-y-6 mb-8">
                 <blockquote className="border-l-4 pl-5" style={{ borderColor: 'rgba(203,125,11,0.45)' }}>
                   <p className="text-gray-600 text-base italic leading-relaxed">
-                    "Your first quote goes here — replace this with your own words."
+                    "Every act of kindness, no matter how small, creates ripples of change that reach further than we can imagine. We exist to be those ripples in the lives of those who need it most."
                   </p>
                 </blockquote>
                 <blockquote className="border-l-4 pl-5" style={{ borderColor: 'rgba(203,125,11,0.45)' }}>
                   <p className="text-gray-600 text-base italic leading-relaxed">
-                    "Your second quote goes here — replace this with your own words."
+                    "We do not serve because we have to — we serve because every life is precious, and every family deserves a chance at dignity, hope, and a better tomorrow."
                   </p>
                 </blockquote>
               </div>
 
-              <p className="text-gray-400 italic text-sm">— Serving Humanity with Love</p>
+              <p className="text-gray-400 italic text-sm">— MSS Charitable Trust, Founded with Love</p>
             </div>
 
           </div>
