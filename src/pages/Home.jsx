@@ -156,10 +156,11 @@ export default function Home({ openDonate }) {
               {programs.map((p, i) => (
                 <div
                   key={i}
-                  className="bg-white/5 border border-white/8 p-7 rounded-xl flex flex-col"
+                  className="bg-white/5 border border-white/8 p-9 rounded-xl flex flex-col"
+                  style={{ minHeight: 240 }}
                 >
-                  <div className="w-10 h-0.5 bg-marigold mb-5" />
-                  <h3 className="font-bold text-white text-base mb-3 leading-snug">
+                  <div className="w-10 h-0.5 bg-marigold mb-6" />
+                  <h3 className="font-bold text-white text-lg mb-4 leading-snug">
                     {p.title}
                   </h3>
                   <p className="text-white/55 text-sm leading-relaxed flex-1">{p.desc}</p>
