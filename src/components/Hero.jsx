@@ -94,7 +94,7 @@ export default function Hero({ openDonate }) {
         </button>
 
         {/* Content */}
-        <div className="relative z-20 w-full px-5 sm:px-10 pb-12 sm:pb-20">
+        <div className="relative z-20 w-full px-5 sm:px-10 pb-24 sm:pb-40">
           <h1
             key={cur}
             className="hero-headline text-white font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-6 sm:mb-8 max-w-4xl"
