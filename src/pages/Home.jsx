@@ -105,16 +105,12 @@ export default function Home({ openDonate }) {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-xl" style={{ border: '2px solid rgba(203,125,11,0.35)' }}>
                 <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=85"
-                  alt="MSS Charitable Trust founders"
+                  src="/photos/founder.jpg"
+                  alt="MSS Charitable Trust founder"
                   className="w-full object-cover object-top"
                   style={{ height: 420 }}
                   loading="lazy"
                 />
-              </div>
-              <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full">
-                📷 Founder photo — replace later
-              </div>
             </div>
 
             {/* Content */}
