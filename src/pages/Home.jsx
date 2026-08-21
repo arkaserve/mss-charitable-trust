@@ -111,6 +111,7 @@ export default function Home({ openDonate }) {
                   style={{ height: 420 }}
                   loading="lazy"
                 />
+              </div>
             </div>
 
             {/* Content */}
