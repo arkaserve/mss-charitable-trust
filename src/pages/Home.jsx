@@ -96,6 +96,57 @@ export default function Home({ openDonate }) {
         </div>
       </div>
 
+      {/* 1c ── Our Heart */}
+      <section className="py-20 bg-cream">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+
+            {/* Photo */}
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden shadow-xl" style={{ border: '2px solid rgba(203,125,11,0.35)' }}>
+                <img
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=85"
+                  alt="MSS Charitable Trust founders"
+                  className="w-full object-cover object-top"
+                  style={{ height: 420 }}
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full">
+                📷 Founder photo — replace later
+              </div>
+            </div>
+
+            {/* Content */}
+            <div>
+              <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-4">Our Heart</div>
+              <h2
+                className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-8"
+                style={{ fontFamily: "'Lora', serif" }}
+              >
+                Kindness is the language the world understands
+              </h2>
+
+              <div className="space-y-6 mb-8">
+                <blockquote className="border-l-4 pl-5" style={{ borderColor: 'rgba(203,125,11,0.45)' }}>
+                  <p className="text-gray-600 text-base italic leading-relaxed">
+                    "Every act of kindness, no matter how small, creates ripples of change that reach further than we can imagine. We exist to be those ripples in the lives of those who need it most."
+                  </p>
+                </blockquote>
+                <blockquote className="border-l-4 pl-5" style={{ borderColor: 'rgba(203,125,11,0.45)' }}>
+                  <p className="text-gray-600 text-base italic leading-relaxed">
+                    "We do not serve because we have to — we serve because every life is precious, and every family deserves a chance at dignity, hope, and a better tomorrow."
+                  </p>
+                </blockquote>
+              </div>
+
+              <p className="text-gray-400 italic text-sm">— MSS Charitable Trust, Founded with Love</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* 2 ── Programs — JWF-style: dark centered heading + card grid */}
       <section className="bg-stone-900">
         {/* Heading band */}
@@ -183,58 +234,6 @@ export default function Home({ openDonate }) {
                 Learn More
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3b ── Our Heart */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-
-            {/* Photo */}
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-xl" style={{ border: '2px solid rgba(203,125,11,0.35)' }}>
-                <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=85"
-                  alt="MSS Charitable Trust founders"
-                  className="w-full object-cover object-top"
-                  style={{ height: 420 }}
-                  loading="lazy"
-                />
-              </div>
-              {/* Replace-me label */}
-              <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full">
-                📷 Founder photo — replace later
-              </div>
-            </div>
-
-            {/* Content */}
-            <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-4">Our Heart</div>
-              <h2
-                className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-8"
-                style={{ fontFamily: "'Lora', serif" }}
-              >
-                Kindness is the language the world understands
-              </h2>
-
-              <div className="space-y-6 mb-8">
-                <blockquote className="border-l-4 pl-5" style={{ borderColor: 'rgba(203,125,11,0.45)' }}>
-                  <p className="text-gray-600 text-base italic leading-relaxed">
-                    "Every act of kindness, no matter how small, creates ripples of change that reach further than we can imagine. We exist to be those ripples in the lives of those who need it most."
-                  </p>
-                </blockquote>
-                <blockquote className="border-l-4 pl-5" style={{ borderColor: 'rgba(203,125,11,0.45)' }}>
-                  <p className="text-gray-600 text-base italic leading-relaxed">
-                    "We do not serve because we have to — we serve because every life is precious, and every family deserves a chance at dignity, hope, and a better tomorrow."
-                  </p>
-                </blockquote>
-              </div>
-
-              <p className="text-gray-400 italic text-sm">— MSS Charitable Trust, Founded with Love</p>
-            </div>
-
           </div>
         </div>
       </section>
