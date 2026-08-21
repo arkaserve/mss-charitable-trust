@@ -7,32 +7,26 @@ const programs = [
   {
     title: 'Education',
     desc: 'We fund scholarships, distribute school kits, run free tuition centres, and mentor students from low-income families — because every child deserves the chance to learn.',
-    to: '/our-work',
   },
   {
     title: 'Partnerships',
     desc: 'We collaborate with corporates, institutions, and NGOs through CSR and joint programs. Together, we multiply impact and build sustainable change at the community level.',
-    to: '/our-work',
   },
   {
     title: 'Volunteer Opportunities',
     desc: 'Whether teaching, healthcare, outreach, or administration — your time and skills can transform lives. Join our growing network of compassionate volunteers across Andhra Pradesh.',
-    to: '/get-involved',
   },
   {
     title: 'Women & Widow Empowerment',
     desc: 'Vocational training, self-help groups, legal awareness camps, and monthly financial support help widowed and vulnerable women reclaim their independence and dignity.',
-    to: '/our-work',
   },
   {
     title: 'Charitable Activities',
     desc: 'From free health camps and food distribution to disaster relief and elder care — we respond to the most urgent community needs with compassion, speed, and accountability.',
-    to: '/our-work',
   },
   {
     title: 'Orphan Care',
     desc: 'We provide safe shelter, nutritious meals, school enrolment, and emotional care for orphaned and abandoned children — giving them a home, a future, and a sense of belonging.',
-    to: '/our-work',
   },
 ]
 
@@ -160,17 +154,16 @@ export default function Home({ openDonate }) {
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
               {programs.map((p, i) => (
-                <Link
+                <div
                   key={i}
-                  to={p.to}
-                  className="group bg-white/5 border border-white/8 p-7 rounded-xl hover:bg-white/10 transition-all duration-300 flex flex-col"
+                  className="bg-white/5 border border-white/8 p-7 rounded-xl flex flex-col"
                 >
                   <div className="w-10 h-0.5 bg-marigold mb-5" />
-                  <h3 className="font-bold text-white text-base mb-3 leading-snug group-hover:text-marigold transition-colors">
+                  <h3 className="font-bold text-white text-base mb-3 leading-snug">
                     {p.title}
                   </h3>
                   <p className="text-white/55 text-sm leading-relaxed flex-1">{p.desc}</p>
-                </Link>
+                </div>
               ))}
             </div>
             <div className="text-center">
