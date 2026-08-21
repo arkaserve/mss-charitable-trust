@@ -5,33 +5,33 @@ import Gallery from '../components/Gallery'
 /* ── Programs ── */
 const programs = [
   {
-    icon: '📚',
-    title: 'Education Centres',
-    desc: 'Scholarships, school kits, free tuition, and career mentorship for students from low-income families across Andhra Pradesh.',
+    title: 'Education',
+    desc: 'We fund scholarships, distribute school kits, run free tuition centres, and mentor students from low-income families — because every child deserves the chance to learn.',
     to: '/our-work',
   },
   {
-    icon: '👧',
-    title: 'Children Support',
-    desc: 'Safe shelter, daily nutrition, school enrolment, and psychological care for orphaned and vulnerable children.',
+    title: 'Partnerships',
+    desc: 'We collaborate with corporates, institutions, and NGOs through CSR and joint programs. Together, we multiply impact and build sustainable change at the community level.',
     to: '/our-work',
   },
   {
-    icon: '🙏',
-    title: 'Women & Widows',
-    desc: 'Vocational training, financial assistance, and self-help groups to help widowed women rebuild financially independent lives.',
+    title: 'Volunteer Opportunities',
+    desc: 'Whether teaching, healthcare, outreach, or administration — your time and skills can transform lives. Join our growing network of compassionate volunteers across Andhra Pradesh.',
+    to: '/get-involved',
+  },
+  {
+    title: 'Women & Widow Empowerment',
+    desc: 'Vocational training, self-help groups, legal awareness camps, and monthly financial support help widowed and vulnerable women reclaim their independence and dignity.',
     to: '/our-work',
   },
   {
-    icon: '🏥',
-    title: 'Healthcare & Wellness',
-    desc: 'Free medical camps bringing physician consultations, eye, dental, and specialist care directly to rural communities.',
+    title: 'Charitable Activities',
+    desc: 'From free health camps and food distribution to disaster relief and elder care — we respond to the most urgent community needs with compassion, speed, and accountability.',
     to: '/our-work',
   },
   {
-    icon: '🤝',
-    title: 'Livelihood & Skills',
-    desc: 'Community welfare — sanitation drives, environmental programmes, and volunteer-led initiatives that uplift entire villages.',
+    title: 'Orphan Care',
+    desc: 'We provide safe shelter, nutritious meals, school enrolment, and emotional care for orphaned and abandoned children — giving them a home, a future, and a sense of belonging.',
     to: '/our-work',
   },
 ]
@@ -107,8 +107,8 @@ export default function Home({ openDonate }) {
                 <img
                   src="/photos/founder.jpg"
                   alt="MSS Charitable Trust founder"
-                  className="w-full object-cover object-top"
-                  style={{ height: 420 }}
+                  className="w-full object-cover"
+                  style={{ height: 420, objectPosition: 'center 25%' }}
                   loading="lazy"
                 />
               </div>
@@ -150,7 +150,7 @@ export default function Home({ openDonate }) {
         <div className="pt-16 pb-10 text-center px-6">
           <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-4">What We Do</div>
           <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-            Our Programs
+            Our Mission: We Care for People
           </h2>
           <div className="w-16 h-0.5 bg-marigold mx-auto mt-6" />
         </div>
@@ -163,14 +163,13 @@ export default function Home({ openDonate }) {
                 <Link
                   key={i}
                   to={p.to}
-                  className="group bg-white/5 border border-white/10 p-7 rounded hover:bg-white/10 transition-all duration-300"
+                  className="group bg-white/5 border border-white/8 p-7 rounded-xl hover:bg-white/10 transition-all duration-300 flex flex-col"
                 >
-                  <div className="text-3xl mb-4">{p.icon}</div>
+                  <div className="w-10 h-0.5 bg-marigold mb-5" />
                   <h3 className="font-bold text-white text-base mb-3 leading-snug group-hover:text-marigold transition-colors">
                     {p.title}
                   </h3>
-                  <p className="text-white/55 text-sm leading-relaxed mb-5">{p.desc}</p>
-                  <span className="text-marigold text-xs font-bold">Learn More →</span>
+                  <p className="text-white/55 text-sm leading-relaxed flex-1">{p.desc}</p>
                 </Link>
               ))}
             </div>
