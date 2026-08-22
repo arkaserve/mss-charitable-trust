@@ -1,161 +1,108 @@
 import { Link } from 'react-router-dom'
-import Logo from './Logo'
+
 
 const quickLinks = [
-  { to: '/',            label: 'Home'        },
-  { to: '/about',       label: 'About Us'    },
-  { to: '/our-work',    label: 'Our Work'    },
-  { to: '/impact',      label: 'Our Impact'  },
-  { to: '/get-involved',label: 'Get Involved'},
-  { to: '/contact',     label: 'Contact Us'  },
+  { to: '/',             label: 'Home'        },
+  { to: '/about',        label: 'About Us'    },
+  { to: '/our-work',     label: 'Our Work'    },
+  { to: '/gallery',      label: 'Photo Gallery'},
+  { to: '/get-involved', label: 'Get Involved'},
+  { to: '/contact',      label: 'Contact Us'  },
 ]
 
-const programs = [
-  'Education Centres',
-  'Children Support',
-  'Women & Widows',
-  'Healthcare & Wellness',
-  'Livelihood & Skills',
-]
+const FacebookIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+  </svg>
+)
 
-const socials = [
-  { label: 'FB',  href: '#' },
-  { label: 'IG',  href: '#' },
-  { label: 'YT',  href: '#' },
-]
+const InstagramIcon = () => (
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+  </svg>
+)
+
+const YouTubeIcon = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/>
+    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+  </svg>
+)
 
 export default function Footer() {
   return (
-    <footer className="bg-forest-deep">
+    <footer className="bg-cream border-t border-gray-200">
+      <div className="max-w-4xl mx-auto px-6 py-16 text-center">
 
-      {/* ── CTA strip ── */}
-      <div className="border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-2">Make A Difference</div>
-            <h3 className="text-xl md:text-2xl font-bold text-white leading-snug">
-              Ready to change a life today?
-            </h3>
-          </div>
+        {/* Trust name — large centered heading */}
+        <h2
+          className="font-bold text-3xl md:text-4xl mb-10 text-center"
+          style={{ fontFamily: "'Lora', serif", color: '#1A5C38' }}
+        >
+          MSS Charitable Trust (India)
+        </h2>
+
+        {/* Nav links with dot separators */}
+        <div className="flex flex-wrap justify-center items-center mb-10">
+          {quickLinks.map((l, i) => (
+            <span key={l.to} className="flex items-center">
+              <Link
+                to={l.to}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-base font-medium px-3 transition-colors hover:opacity-80"
+                style={{ color: '#4A7C59' }}
+              >
+                {l.label}
+              </Link>
+              {i < quickLinks.length - 1 && (
+                <span className="text-sm select-none" style={{ color: '#CB7D0B' }}>·</span>
+              )}
+            </span>
+          ))}
+        </div>
+
+        {/* Social icons */}
+        <div className="flex justify-center items-center gap-5 mb-10">
+          <a href="#" aria-label="Facebook" className="transition-colors hover:opacity-70" style={{ color: '#1A5C38' }}>
+            <FacebookIcon />
+          </a>
+          <a href="#" aria-label="Instagram" className="transition-colors hover:opacity-70" style={{ color: '#1A5C38' }}>
+            <InstagramIcon />
+          </a>
+          <a href="#" aria-label="YouTube" className="transition-colors hover:opacity-70" style={{ color: '#1A5C38' }}>
+            <YouTubeIcon />
+          </a>
+        </div>
+
+        {/* Copyright */}
+        <p className="text-sm mb-4" style={{ color: '#7A9E89' }}>
+          © 2024 MSS Charitable Trust. All rights reserved.
+        </p>
+
+        {/* Privacy & Terms */}
+        <div className="flex justify-center items-center gap-2">
           <Link
-            to="/get-involved"
-            className="shrink-0 bg-marigold hover:bg-marigold-dark text-white font-bold px-8 py-3.5 rounded-full transition-colors text-sm whitespace-nowrap"
+            to="/privacy-policy"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="text-sm hover:underline"
+            style={{ color: '#CB7D0B' }}
           >
-            Donate Now →
+            Privacy Policy
+          </Link>
+          <span className="text-sm" style={{ color: '#CB7D0B' }}>·</span>
+          <Link
+            to="/terms-of-use"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="text-sm hover:underline"
+            style={{ color: '#CB7D0B' }}
+          >
+            Terms of Use
           </Link>
         </div>
+
       </div>
-
-      {/* ── Main grid ── */}
-      <div className="max-w-6xl mx-auto px-6 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-5">
-              <Logo size={44} className="shrink-0" />
-              <div>
-                <div className="font-bold text-white text-sm whitespace-nowrap">MSS Charitable Trust</div>
-                <div className="text-marigold text-xs mt-0.5 font-semibold">Serving Humanity</div>
-              </div>
-            </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-6">
-              A registered charitable organisation working to uplift underprivileged communities
-              across Andhra Pradesh through education, healthcare, and empowerment.
-            </p>
-            <div className="flex gap-3">
-              {socials.map((s, i) => (
-                <a
-                  key={i}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-9 h-9 rounded-full bg-white/10 hover:bg-marigold flex items-center justify-center text-white text-xs font-bold transition-colors"
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-marigold mb-5">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map(l => (
-                <li key={l.to}>
-                  <Link
-                    to={l.to}
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="group flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors"
-                  >
-                    <span className="text-marigold text-xs transition-transform group-hover:translate-x-0.5">→</span>
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Programs */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-marigold mb-5">Our Programs</h4>
-            <ul className="space-y-3">
-              {programs.map((p, i) => (
-                <li key={i}>
-                  <Link
-                    to="/our-work"
-                    className="group flex items-center gap-2 text-white/60 hover:text-white text-sm transition-colors"
-                  >
-                    <span className="text-marigold text-xs transition-transform group-hover:translate-x-0.5">→</span>
-                    {p}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact + Certifications */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-marigold mb-5">Get In Touch</h4>
-            <div className="space-y-4 mb-8">
-              <div className="flex gap-3">
-                <span className="shrink-0 mt-0.5">📍</span>
-                <span className="text-white/60 text-sm leading-relaxed">Guntur, Andhra Pradesh – 522315</span>
-              </div>
-              <div className="flex gap-3">
-                <span className="shrink-0">📞</span>
-                <span className="text-white/60 text-sm">+91 98663 76367</span>
-              </div>
-              <div className="flex gap-3">
-                <span className="shrink-0">✉️</span>
-                <span className="text-white/60 text-sm break-all">msscharitabletrust4u@gmail.com</span>
-              </div>
-            </div>
-
-            {/* Certification badges */}
-            <div className="flex flex-wrap gap-2">
-              {['12A Registered', '80G Certified', 'Audited Yearly'].map((c, i) => (
-                <span
-                  key={i}
-                  className="text-xs bg-forest text-forest-light px-3 py-1.5 rounded-full border border-forest-light/20 font-semibold"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      {/* ── Bottom bar ── */}
-      <div className="border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-1 text-center sm:text-left">
-          <span className="text-white/35 text-xs">© 2024 MSS Charitable Trust. All rights reserved.</span>
-          <span className="text-white/35 text-xs">Reg. No. MSST/2024 · Indian Trusts Act, 1882</span>
-        </div>
-      </div>
-
     </footer>
   )
 }

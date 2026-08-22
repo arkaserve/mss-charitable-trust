@@ -1,24 +1,25 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-const INIT = { first_name: '', last_name: '', email: '', phone: '', purpose: '', message: '' }
+const INIT = { full_name: '', email: '', phone: '', purpose: '', message: '' }
 
-const contactCards = [
-  {
-    icon: '📍',
-    title: 'Visit Our Office',
-    lines: ['MSS Charitable Trust,', 'Guntur, Andhra Pradesh – 522315'],
-  },
-  {
-    icon: '📞',
-    title: 'Call / WhatsApp',
-    lines: ['+91 98663 76367', 'Mon – Sat, 9 AM – 6 PM'],
-  },
-  {
-    icon: '✉️',
-    title: 'Email Us',
-    lines: ['msscharitabletrust4u@gmail.com', 'Reply within 24 hours'],
-  },
-]
+const PhoneIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63 19.79 19.79 0 01.03 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.13 1 .38 1.98.72 2.92a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.16-1.16a2 2 0 012.11-.45c.94.34 1.92.59 2.92.72A2 2 0 0122 14.92z"/>
+  </svg>
+)
+const MailIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6"/>
+  </svg>
+)
+const PinIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+)
 
 export default function Contact() {
   const [form, setForm]     = useState(INIT)
@@ -42,223 +43,194 @@ export default function Contact() {
     } catch { setStatus('error') }
   }
 
-  const field = 'w-full border border-gray-200 rounded-lg px-4 py-3.5 text-sm text-gray-800 focus:outline-none focus:border-marigold focus:ring-1 focus:ring-marigold/30 transition-colors bg-white placeholder-gray-400'
+  const inputCls = 'w-full bg-white text-gray-900 text-sm px-4 py-2.5 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forest/25 transition-colors'
+  const inputStyle = { border: '1px solid rgb(212,201,175)' }
 
   return (
     <>
-      {/* ── Photo Hero ── */}
-      <div
-        className="relative flex flex-col justify-center overflow-hidden"
-        style={{ height: 520, minHeight: 420 }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1524504388940-b1c1722653e0?auto=format&fit=crop&w=1920&q=85')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 35%',
-          }}
-        />
-        {/* Diagonal gradient — heavy left, fades to translucent right so photo shows */}
-        <div
-          className="absolute inset-0"
-          style={{ background: 'linear-gradient(110deg, rgba(8,34,24,0.97) 0%, rgba(8,34,24,0.82) 45%, rgba(8,34,24,0.45) 100%)' }}
-        />
-        {/* Subtle bottom fade for readability */}
-        <div
-          className="absolute inset-x-0 bottom-0 h-32"
-          style={{ background: 'linear-gradient(to top, rgba(8,34,24,0.6) 0%, transparent 100%)' }}
-        />
-
-        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full py-16">
-          <div className="max-w-2xl">
-            {/* Eyebrow with rule */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-0.5 bg-marigold shrink-0" />
-              <div className="text-xs font-bold uppercase tracking-widest text-marigold">Contact Us</div>
-            </div>
-
-            <h1
-              className="text-4xl md:text-5xl lg:text-[3.5rem] text-white font-black leading-tight mb-5"
-              style={{ textShadow: '0 2px 24px rgba(0,0,0,0.5)' }}
-            >
-              Let's Connect &<br className="hidden sm:block" /> Make a Difference
-            </h1>
-            <p className="text-white/65 text-base max-w-lg leading-relaxed mb-10">
-              For donations, volunteering, partnerships, or any query — we respond within 24 hours.
-            </p>
-
-            {/* Quick contact pills */}
-            <div className="flex flex-wrap gap-3">
-              {[
-                { icon: '📞', text: '+91 98663 76367', always: true },
-                { icon: '✉️', text: 'msscharitabletrust4u@gmail.com', always: false },
-                { icon: '📍', text: 'Guntur, Andhra Pradesh', always: true },
-              ].map((c, i) => (
-                <div
-                  key={i}
-                  className={`flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 ${c.always ? '' : 'hidden sm:flex'}`}
-                >
-                  <span className="text-sm leading-none">{c.icon}</span>
-                  <span className="text-white/80 text-xs font-medium">{c.text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* ── Small hero ── */}
+      <div className="bg-forest-deep py-7 px-4 text-left" style={{ minHeight: 145, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+        <div className="max-w-6xl mx-auto w-full px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mb-2 whitespace-nowrap">
+            We'd Love to Hear From You
+          </h1>
+          <p className="text-white/75 text-sm max-w-xl leading-relaxed">
+            Whether you're interested in volunteering, making a donation, or partnering with us — please reach out.
+          </p>
         </div>
       </div>
 
-      {/* ── Contact info cards strip ── */}
-      <div className="bg-forest-deep">
-        <div className="max-w-6xl mx-auto px-6 py-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {contactCards.map((c, i) => (
-              <div
-                key={i}
-                className="flex gap-5 bg-white/5 border border-white/10 rounded-xl px-6 py-6 hover:bg-white/10 transition-colors"
+      {/* ── Main 2-column section ── */}
+      <div className="pt-6 pb-14 sm:pt-8 sm:pb-20 px-4 sm:px-6" style={{ backgroundColor: 'rgb(245,240,232)' }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+
+            {/* ── LEFT: Get in Touch ── */}
+            <div className="flex flex-col">
+              <h2
+                className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8"
+                style={{ fontFamily: "'Lora', serif" }}
               >
-                <div className="text-3xl shrink-0 mt-0.5">{c.icon}</div>
+                Get in Touch
+              </h2>
+
+              {/* Contact items */}
+              <div className="space-y-6 mb-8">
+
+                {/* Phone */}
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-full shrink-0 flex items-center justify-center" style={{ backgroundColor: 'rgb(139,115,85)' }}>
+                    <PhoneIcon />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgb(92,73,45)' }}>Phone</div>
+                    <a href="tel:+919866376367" className="text-sm font-semibold hover:underline" style={{ color: 'rgb(139,115,85)' }}>
+                      +91 98663 76367
+                    </a>
+                    <div className="text-gray-400 text-xs mt-0.5">Mon – Sat, 9 AM – 6 PM</div>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-full shrink-0 flex items-center justify-center" style={{ backgroundColor: 'rgb(139,115,85)' }}>
+                    <MailIcon />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgb(92,73,45)' }}>Email</div>
+                    <a href="mailto:msscharitabletrust4u@gmail.com" className="text-sm font-semibold break-all hover:underline" style={{ color: 'rgb(139,115,85)' }}>
+                      msscharitabletrust4u@gmail.com
+                    </a>
+                    <div className="text-gray-400 text-xs mt-0.5">Reply within 24 hours</div>
+                  </div>
+                </div>
+
+                {/* Address */}
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-full shrink-0 flex items-center justify-center" style={{ backgroundColor: 'rgb(139,115,85)' }}>
+                    <PinIcon />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgb(92,73,45)' }}>Address</div>
+                    <p className="text-gray-700 text-sm font-medium leading-relaxed">
+                      MSS Charitable Trust,<br />Guntur, India – 522315
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Quote card */}
+              <div className="mt-2 mb-1 rounded-xl p-6 relative overflow-hidden" style={{ backgroundColor: 'rgb(232,224,210)', border: '1px solid rgb(212,201,175)' }}>
+                <div className="text-6xl leading-none opacity-15 select-none absolute -top-2 left-4" style={{ color: 'rgb(82,68,42)', fontFamily: "'Lora', serif" }}>"</div>
+                <p className="text-sm italic leading-relaxed relative z-10 mb-3" style={{ color: 'rgb(82,68,42)', fontFamily: "'Lora', serif" }}>
+                  Every message we receive is a chance to serve better. We are here, we are listening, and we care deeply about every family we touch.
+                </p>
+                <div className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgb(139,115,85)' }}>— MSS Charitable Trust</div>
+              </div>
+
+              {/* Trust info strip */}
+              <div className="rounded-xl p-4 flex items-center gap-4 mb-2" style={{ backgroundColor: 'rgb(245,240,232)', border: '1px solid rgb(212,201,175)' }}>
+                <div className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center text-lg" style={{ backgroundColor: 'rgb(200,169,110)' }}>🏛️</div>
                 <div>
-                  <div className="font-bold text-white text-sm mb-2">{c.title}</div>
-                  {c.lines.map((l, j) => (
-                    <div key={j} className="text-white/55 text-sm leading-relaxed">{l}</div>
-                  ))}
+                  <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgb(92,73,45)' }}>Registered Non-Profit</div>
+                  <div className="text-xs" style={{ color: 'rgb(139,115,85)' }}>Reg. No. MSST/2024 · Indian Trusts Act, 1882</div>
                 </div>
               </div>
-            ))}
+
+              {/* Donation callout box */}
+              <div className="mt-auto rounded-xl p-6" style={{ backgroundColor: 'rgb(82,68,42)' }}>
+                <div className="font-bold text-white text-base mb-1">Want to make a donation?</div>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgb(212,185,140)' }}>
+                  Find all bank transfer and UPI payment details on our Donate page.
+                </p>
+                <Link
+                  to="/get-involved"
+                  className="inline-block font-semibold text-sm px-6 py-2.5 rounded-lg transition-all hover:opacity-90"
+                  style={{ backgroundColor: 'rgb(168,142,98)', color: 'white' }}
+                >
+                  Go to Donate Page
+                </Link>
+              </div>
+            </div>
+
+            {/* ── RIGHT: Form card ── */}
+            <div className="bg-white rounded-2xl shadow-md px-7 sm:px-8 py-8 sm:py-10 h-full">
+              <h2
+                className="text-xl sm:text-2xl font-bold text-gray-900 mb-7"
+                style={{ fontFamily: "'Lora', serif" }}
+              >
+                Send Us a Message
+              </h2>
+
+              <form onSubmit={submit} className="space-y-5">
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name</label>
+                  <input name="full_name" value={form.full_name} onChange={set}
+                    placeholder="Your name" className={inputCls} style={inputStyle} required />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
+                  <input name="email" type="email" value={form.email} onChange={set}
+                    placeholder="your@email.com" className={inputCls} style={inputStyle} required />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+                  <input name="phone" type="tel" value={form.phone} onChange={set}
+                    className={inputCls} style={inputStyle} />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Purpose</label>
+                  <select name="purpose" value={form.purpose} onChange={set}
+                    className={inputCls + ' text-gray-700'} style={inputStyle}>
+                    <option value="">Select a purpose…</option>
+                    <option>Donation enquiry</option>
+                    <option>Sponsorship</option>
+                    <option>Volunteering</option>
+                    <option>CSR / Partnership</option>
+                    <option>General query</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
+                  <textarea name="message" value={form.message} onChange={set}
+                    placeholder="How can we help you?" rows={4}
+                    className={inputCls + ' resize-none'} style={inputStyle} required />
+                </div>
+
+                <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
+                {status === 'success' && (
+                  <div className="bg-green-50 border border-green-200 text-green-700 text-sm p-4 rounded-lg flex gap-2 items-start">
+                    <span className="shrink-0">✓</span> Thank you! We'll respond within 24 hours.
+                  </div>
+                )}
+                {status === 'error' && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 text-sm p-4 rounded-lg">
+                    Something went wrong. Please email us directly.
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="w-full py-3 rounded-lg font-semibold text-white text-base transition-all hover:opacity-90 disabled:opacity-60"
+                  style={{ backgroundColor: 'rgb(82,68,42)' }}
+                >
+                  {status === 'sending' ? 'Sending…' : 'Send Message'}
+                </button>
+
+              </form>
+            </div>
+
           </div>
         </div>
       </div>
-
-      {/* ── Main section ── */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-14">
-
-            {/* Left: Bank details + Office hours */}
-            <div className="lg:col-span-2 space-y-7">
-
-              {/* Bank transfer */}
-              <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-                <div className="bg-forest-deep px-6 py-4">
-                  <h4 className="font-bold text-white text-sm uppercase tracking-widest">Bank Transfer Details</h4>
-                </div>
-                <div className="px-6 py-4 space-y-0">
-                  {[
-                    ['Account Name', 'MSS Charitable Trust'],
-                    ['Account No.',  'XXXX XXXX XXXX'],
-                    ['Bank & Branch','Bank Name, Branch'],
-                    ['IFSC Code',    'XXXXXXXXXX'],
-                    ['Account Type', 'Current Account'],
-                  ].map(([l, r]) => (
-                    <div key={l} className="flex justify-between py-3 border-b border-gray-100 last:border-0 gap-4">
-                      <span className="text-gray-400 text-xs">{l}</span>
-                      <span className="font-semibold text-gray-800 text-xs text-right">{r}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="px-6 pb-5">
-                  <div className="bg-marigold/10 border border-marigold/25 text-marigold-dark text-xs px-4 py-3 rounded-lg font-medium">
-                    ✓ 80G tax receipt issued for all donations above ₹500
-                  </div>
-                </div>
-              </div>
-
-              {/* Quick promise */}
-              <div className="bg-marigold rounded-xl px-6 py-5 flex gap-4 items-start">
-                <span className="text-2xl shrink-0">⚡</span>
-                <div>
-                  <div className="font-bold text-white text-sm mb-1">Fast Response Guarantee</div>
-                  <p className="text-white/80 text-sm leading-relaxed">
-                    Every message is personally read by our team. You will receive a reply within 24 hours on working days.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Right: Contact form */}
-            <div className="lg:col-span-3">
-              <div className="bg-white rounded-xl shadow-sm p-8">
-                <div className="mb-8">
-                  <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-2">Send A Message</div>
-                  <h2 className="text-2xl font-bold text-gray-900">We'd Love to Hear From You</h2>
-                </div>
-
-                <form onSubmit={submit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">First Name *</label>
-                      <input name="first_name" value={form.first_name} onChange={set} placeholder="John" className={field} required />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Last Name</label>
-                      <input name="last_name" value={form.last_name} onChange={set} placeholder="Doe" className={field} />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Email Address *</label>
-                    <input name="email" type="email" value={form.email} onChange={set} placeholder="you@example.com" className={field} required />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Phone Number</label>
-                    <input name="phone" type="tel" value={form.phone} onChange={set} placeholder="" className={field} />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Purpose</label>
-                    <select name="purpose" value={form.purpose} onChange={set} className={field}>
-                      <option value="">Select a purpose…</option>
-                      <option>Donation enquiry</option>
-                      <option>Sponsorship</option>
-                      <option>Volunteering</option>
-                      <option>CSR / Partnership</option>
-                      <option>Request annual report</option>
-                      <option>General query</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Your Message *</label>
-                    <textarea
-                      name="message" value={form.message} onChange={set}
-                      placeholder="Tell us how we can help…"
-                      rows={5}
-                      className={field + ' resize-none'}
-                      required
-                    />
-                  </div>
-
-                  <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-
-                  {status === 'success' && (
-                    <div className="bg-green-50 border border-green-200 text-green-700 text-sm p-4 rounded-lg flex gap-3">
-                      <span className="shrink-0">✓</span>
-                      Thank you! Your message has been sent. We'll respond within 24 hours.
-                    </div>
-                  )}
-                  {status === 'error' && (
-                    <div className="bg-red-50 border border-red-200 text-red-700 text-sm p-4 rounded-lg">
-                      Something went wrong. Please try again or email us directly.
-                    </div>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    className="w-full bg-marigold hover:bg-marigold-dark text-white font-bold py-4 rounded-lg text-sm transition-colors disabled:opacity-60 min-h-[52px]"
-                  >
-                    {status === 'sending' ? 'Sending…' : 'Send Message →'}
-                  </button>
-                </form>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
     </>
   )
 }

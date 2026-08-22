@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
-import Gallery from '../components/Gallery'
+import Logo from '../components/Logo'
 
 /* ── Programs ── */
 const programs = [
@@ -14,7 +14,7 @@ const programs = [
   },
   {
     title: 'Volunteer Opportunities',
-    desc: 'Whether teaching, healthcare, outreach, or administration — your time and skills can transform lives. Join our growing network of compassionate volunteers across Andhra Pradesh.',
+    desc: 'Whether teaching, healthcare, outreach, or administration — your time and skills can transform lives. Join our growing network of compassionate volunteers across India.',
   },
   {
     title: 'Women & Widow Empowerment',
@@ -30,33 +30,28 @@ const programs = [
   },
 ]
 
-/* ── Impact stats ── */
-const stats = [
-  { num: '500+', label: 'Families Helped'    },
-  { num: '200+', label: 'Students Supported' },
-  { num: '80+',  label: 'Children in Care'   },
-  { num: '12',   label: 'Health Camps Held'  },
-]
-
-/* ── Donation methods ── */
-const donateMethods = [
+/* ── Testimonials ── */
+const testimonials = [
   {
-    icon: '📱',
-    title: 'UPI / BHIM Payment',
-    body: 'Scan our QR code or send directly to our UPI ID for an instant, secure transfer.',
-    detail: 'UPI ID: msscharitabletrust@upi',
+    name: 'Rajesh P',
+    role: 'Manager, MSS Trust',
+    initials: 'RP',
+    color: '#1A5C38',
+    quote: 'Managing MSS Trust has been a deeply fulfilling journey. Every day, I see how our programs directly transform lives — from children receiving their first school kit to widows starting their own businesses. The trust our community places in us is what keeps us moving forward.',
   },
   {
-    icon: '🏦',
-    title: 'Bank Transfer (NEFT / RTGS)',
-    body: "Transfer directly to our registered bank account. We'll send you a receipt by email.",
-    detail: 'A/C details on request · info@msscharitabletrust.org',
+    name: 'Sunil Mikkili',
+    role: 'Co-Founder, MSS Trust',
+    initials: 'SM',
+    color: '#CB7D0B',
+    quote: 'When we started MSS, we had a simple dream: no child should go to bed hungry, and no family should feel abandoned. Today, seeing the smiles on the faces we serve, I know we are on the right path. This work is bigger than any one of us.',
   },
   {
-    icon: '📄',
-    title: 'Cheque / Demand Draft',
-    body: 'Mail a cheque payable to "MSS Charitable Trust" to our registered office address.',
-    detail: 'Andhra Pradesh — contact us for full address',
+    name: 'Papa Rao',
+    role: 'Camp Lead, MSS Trust',
+    initials: 'PR',
+    color: '#1A5C38',
+    quote: 'Leading our healthcare and community camps across India has shown me how much a little organised effort can achieve. Seeing a village receive free health check-ups for the first time, or watching women gain confidence — these moments are irreplaceable.',
   },
 ]
 
@@ -64,7 +59,7 @@ export default function Home({ openDonate }) {
   return (
     <>
       {/* 1 ── Hero slider */}
-      <Hero openDonate={openDonate} />
+      <Hero />
 
       {/* 1b ── Scrolling marquee ticker */}
       <div className="bg-marigold overflow-hidden py-3">
@@ -95,16 +90,25 @@ export default function Home({ openDonate }) {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-            {/* Photo */}
-            <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-xl" style={{ border: '2px solid rgba(203,125,11,0.35)' }}>
-                <img
-                  src="/photos/founder.jpg"
-                  alt="MSS Charitable Trust founder"
-                  className="w-full object-cover"
-                  style={{ height: 420, objectPosition: 'center 25%' }}
-                  loading="lazy"
-                />
+            {/* Logo placeholder */}
+            <div className="relative flex items-center justify-center">
+              <div
+                className="rounded-2xl shadow-xl w-full flex items-center justify-center"
+                style={{
+                  height: 420,
+                  background: 'linear-gradient(135deg, #1A5C38 0%, #0d3a22 100%)',
+                  border: '2px solid rgba(203,125,11,0.35)',
+                }}
+              >
+                <div className="flex flex-col items-center gap-6">
+                  <Logo size={220} />
+                  <div
+                    className="text-base font-bold uppercase tracking-widest"
+                    style={{ color: 'rgba(203,125,11,0.9)', letterSpacing: '0.2em' }}
+                  >
+                    MSS Charitable Trust
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -167,210 +171,22 @@ export default function Home({ openDonate }) {
                 </div>
               ))}
             </div>
-            <div className="text-center">
-              <Link
-                to="/our-work"
-                className="inline-flex items-center gap-2 bg-marigold hover:bg-marigold-dark text-white font-bold text-sm px-7 py-3.5 rounded-full transition-colors"
-              >
-                View All Programs →
-              </Link>
-            </div>
+           
           </div>
         </div>
       </section>
 
-      {/* 3 ── About — Fidelity style: large side-by-side photos + text */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-
-            {/* Left: single wide image — Fidelity 0.53 ratio (width × 0.53 = height) */}
-            {/* At ~580px col width → height ≈ 307px → h-72 (288px) is close */}
-            <img
-              src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=85"
-              alt="MSS community outreach"
-              className="w-full object-cover rounded-lg shadow-lg"
-              style={{ height: 320 }}
-              loading="lazy"
-            />
-
-            {/* Right: text */}
-            <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-forest mb-3">About Us</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-5">
-                Raise Your Helping Hand to Build A Better Society
-              </h2>
-              <p className="text-gray-600 text-base leading-relaxed mb-4">
-                MSS Charitable Trust is a registered charitable organization working with underprivileged
-                communities across Andhra Pradesh. We address the core challenges of poverty — education,
-                healthcare, women's empowerment, and children's welfare — with ground-level programs that
-                are verified, accountable, and long-term.
-              </p>
-              <p className="text-gray-600 text-base leading-relaxed mb-6">
-                Our teams are embedded in the communities we serve. Every beneficiary is personally
-                visited and verified. We work closely with local leaders and families to ensure every
-                rupee reaches the right person and creates lasting impact.
-              </p>
-              <ul className="mb-8 space-y-2">
-                <li className="flex items-start gap-2 text-sm text-gray-700">
-                  <span className="text-forest font-bold mt-0.5">→</span>
-                  Partner with us in uplifting communities and transforming their lives.
-                </li>
-              </ul>
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 bg-forest hover:bg-forest-dark text-white font-bold text-sm uppercase tracking-widest px-7 py-3.5 rounded-full transition-colors"
-              >
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4 ── Partner banner — fixed 420px height like Fidelity's content sections */}
-      <section
-        className="relative overflow-hidden flex items-center justify-center"
-        style={{
-          height: 420,
-          backgroundImage: "url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1920&q=85')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center 40%',
-        }}
-      >
-        <div className="absolute inset-0" style={{ background: 'rgba(8,34,24,0.68)' }} />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
-            Partner with us in Uplifting Communities and Transforming Their Lives
-          </h2>
-          <button
-            onClick={openDonate}
-            className="inline-flex items-center gap-3 bg-marigold hover:bg-marigold-dark text-white font-black text-sm uppercase tracking-widest px-8 py-4 rounded-full transition-colors"
-          >
-            Donate Now
-            <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">→</span>
-          </button>
-        </div>
-      </section>
-
-      {/* 5 ── "Want to join a hand?" 3-column */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Want to join a hand?</h2>
-            <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto leading-relaxed">
-              You are welcome to participate in volunteer work, charitable giving, or spreading the word about our mission.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              {
-                icon: '💸',
-                title: 'Send Donation',
-                body: 'Giving online has never been more secure or convenient. Your donation goes directly to a program beneficiary — no middlemen, fully tracked and audited.',
-              },
-              {
-                icon: '🤝',
-                title: 'Volunteer for Work',
-                body: 'Get involved through financial support or hands-on volunteering. Join us in standing up for the economically disadvantaged and creating positive change.',
-              },
-              {
-                icon: '📢',
-                title: 'Spread the Word',
-                body: 'Share our mission with your network. Awareness is powerful — every person who learns about MSS is a potential donor, volunteer, or advocate for change.',
-              },
-            ].map((c, i) => (
-              <div key={i} className="text-center px-4">
-                <div className="w-20 h-20 rounded-full bg-forest-xlight flex items-center justify-center text-4xl mx-auto mb-5">
-                  {c.icon}
-                </div>
-                <h3 className="font-bold text-gray-900 text-lg mb-3">{c.title}</h3>
-                <p className="text-gray-500 text-base leading-relaxed">{c.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6 ── Donation methods */}
-      <section className="py-20 bg-forest-xlight border-t border-forest/10">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <div className="text-xs font-bold uppercase tracking-widest text-forest mb-2">Give Back</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Donate to MSS</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {donateMethods.map((d, i) => (
-              <div key={i} className="bg-white rounded-lg p-8 shadow-sm text-center border-t-4 border-forest hover:shadow-md transition-shadow">
-                <div className="text-5xl mb-5">{d.icon}</div>
-                <h3 className="font-bold text-gray-900 text-base mb-3">{d.title}</h3>
-                <p className="text-gray-500 text-base leading-relaxed mb-4">{d.body}</p>
-                <div className="text-forest font-semibold text-xs bg-forest-xlight px-3 py-2 rounded-md">
-                  {d.detail}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7 ── "Your Contribution Could Save Lives" — Fidelity style: full photo left, no overlay */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-            {/* Fidelity 0.53 ratio — at ~580px col width → ~307px tall */}
-            <img
-              src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1000&q=85"
-              alt="MSS impact"
-              className="w-full object-cover rounded-lg shadow-lg"
-              style={{ height: 320 }}
-              loading="lazy"
-            />
-            <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-forest mb-3">Our Mission</div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-5">
-                Your Contribution Could Save Lives
-              </h2>
-              <p className="text-gray-600 text-base leading-relaxed mb-4">
-                MSS Charitable Trust invites you to join us in making a positive impact and contributing
-                to the growth of our charitable programs. Your generous donation plays an important role
-                in the upliftment of the underprivileged across Andhra Pradesh.
-              </p>
-              <p className="text-gray-600 text-base leading-relaxed mb-8">
-                All donations above ₹500 are eligible for 80G income tax exemption. We are 12A
-                registered with the Government of India, and our accounts are independently audited
-                every year.
-              </p>
-              <Link
-                to="/impact"
-                className="inline-flex items-center gap-2 bg-forest hover:bg-forest-dark text-white font-bold text-sm uppercase tracking-widest px-7 py-3.5 rounded-full transition-colors"
-              >
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8 ── Our Impact — stats + narrative */}
+      {/* 3 ── Our Impact */}
       <section className="py-20 bg-forest">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <div className="text-xs font-bold uppercase tracking-widest text-forest-light mb-2">Results on the Ground</div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Our Impact</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-14">
-            {stats.map((s, i) => (
-              <div key={i}>
-                <div className="font-black text-4xl md:text-5xl text-marigold mb-2">{s.num}</div>
-                <div className="text-white/60 text-xs uppercase tracking-widest">{s.label}</div>
-              </div>
-            ))}
           </div>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-white/80 text-base leading-relaxed mb-4">
               Since our inception in 2020, we have significantly changed the lives of hundreds of
-              families in Andhra Pradesh. We have witnessed children overcoming barriers to education,
+              families in India. We have witnessed children overcoming barriers to education,
               women achieving financial independence, and communities receiving healthcare for the first time.
             </p>
             <p className="text-white/80 text-base leading-relaxed">
@@ -381,30 +197,74 @@ export default function Home({ openDonate }) {
         </div>
       </section>
 
-      {/* 9 ── Photo Gallery */}
-      <Gallery />
-
-      {/* 10 ── Get Involved CTA */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="text-xs font-bold uppercase tracking-widest text-forest mb-3">Take Action</div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-5">
-            Get Involved
-          </h2>
-          <p className="text-gray-500 text-base leading-relaxed mb-10 max-w-xl mx-auto">
-            You can join us in our mission to empower children and communities by volunteering your time,
-            donating, or spreading the word about our work. Together, we can make a difference in the
-            lives of families across Andhra Pradesh.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-3 bg-forest hover:bg-forest-dark text-white font-black text-sm uppercase tracking-widest px-10 py-4 rounded-full transition-colors"
-          >
-            Contact Now
-            <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">✉</span>
-          </Link>
+      {/* 4 ── Community Voices */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-4">Community Voices</div>
+            <h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight"
+              style={{ fontFamily: "'Lora', serif" }}
+            >
+              What Our Community Says About MSS Trust
+            </h2>
+            <div className="w-16 h-0.5 bg-marigold mx-auto mt-5" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-white border border-gray-100 rounded-xl p-8 flex flex-col shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-4xl leading-none mb-5 font-serif" style={{ color: t.color }}>"</div>
+                <p className="text-gray-600 text-sm leading-relaxed flex-1 italic mb-8">{t.quote}</p>
+                <div className="flex items-center gap-4 border-t border-gray-100 pt-5">
+                  <div
+                    className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 text-white font-black text-sm"
+                    style={{ backgroundColor: t.color }}
+                  >
+                    {t.initials}
+                  </div>
+                  <div>
+                    <div className="font-bold text-gray-900 text-sm">{t.name}</div>
+                    <div className="text-xs mt-0.5" style={{ color: t.color }}>{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* 5 ── Dark CTA */}
+      <section className="py-20" style={{ background: '#0D1F17' }}>
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-5">Make a Difference Today</div>
+          <h2
+            className="text-3xl md:text-5xl font-black text-white leading-tight mb-6"
+            style={{ fontFamily: "'Lora', serif" }}
+          >
+            Empowering Communities Through Compassionate Action
+          </h2>
+          <p className="text-white/55 text-base leading-relaxed mb-10 max-w-xl mx-auto">
+            At MSS Charitable Trust, we believe in the power of people coming together to create lasting change.
+            With a focus on education, healthcare, and empowerment, we connect passionate individuals with causes
+            that matter — creating hope in every community we touch.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
+            >
+              Get Involved Today
+            </Link>
+            <Link
+              to="/get-involved"
+              className="inline-flex items-center justify-center gap-2 bg-marigold hover:bg-marigold-dark text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full transition-colors"
+            >
+              Donate Now
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </>
   )
 }

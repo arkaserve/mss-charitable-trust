@@ -5,7 +5,7 @@ const links = [
   { to: '/',            label: 'Home',        end: true },
   { to: '/about',       label: 'About Us'              },
   { to: '/our-work',    label: 'Our Work'              },
-  { to: '/impact',      label: 'Our Impact'            },
+  { to: '/gallery',     label: 'Photo Gallery'         },
   { to: '/get-involved',label: 'Get Involved'          },
   { to: '/contact',     label: 'Contact'               },
 ]
@@ -15,22 +15,6 @@ export default function Nav({ navOpen, setNavOpen, openDonate }) {
 
   return (
     <>
-      {/* ── Top info bar (desktop only) ── */}
-      <div className="bg-forest-deep hidden lg:block border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-2 text-xs text-white/65 gap-6">
-          <div className="flex items-center gap-6">
-            <span>📞 +91 98663 76367</span>
-            <span>✉️ msscharitabletrust4u@gmail.com</span>
-            <span>📍 Andhra Pradesh</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <span>Reg. No. MSST/2024</span>
-            <span className="text-white/30">·</span>
-            <span className="text-forest-light font-semibold">12A &amp; 80G Certified</span>
-          </div>
-        </div>
-      </div>
-
       {/* ── Main nav ── */}
       <nav className="sticky top-0 z-50 bg-forest-deep shadow-md">
         <div className="w-full px-4 sm:px-6 flex items-center justify-between h-16">
@@ -57,12 +41,12 @@ export default function Nav({ navOpen, setNavOpen, openDonate }) {
                 {l.label}
               </NavLink>
             ))}
-            <button
-              onClick={openDonate}
+            <NavLink
+              to="/get-involved"
               className="bg-marigold hover:bg-marigold-dark text-white text-sm font-bold px-5 py-2 rounded-full transition-colors ml-1 whitespace-nowrap"
             >
               Donate Now
-            </button>
+            </NavLink>
           </div>
 
           {/* Hamburger — visible on mobile & tablet (< lg) */}
@@ -128,16 +112,17 @@ export default function Nav({ navOpen, setNavOpen, openDonate }) {
 
         {/* Drawer footer */}
         <div className="px-6 pb-8 pt-4 border-t border-white/10 shrink-0 space-y-3">
-          <button
-            onClick={() => { openDonate(); close() }}
-            className="w-full bg-marigold hover:bg-marigold-dark text-white font-bold text-sm py-3.5 rounded-full transition-colors min-h-[48px] touch-manipulation"
+          <NavLink
+            to="/get-involved"
+            onClick={close}
+            className="w-full bg-marigold hover:bg-marigold-dark text-white font-bold text-sm py-3.5 rounded-full transition-colors min-h-[48px] touch-manipulation text-center block"
           >
             Donate Now
-          </button>
+          </NavLink>
           <div className="space-y-1.5 pt-2 text-xs text-white/50">
             <div>📞 +91 98663 76367</div>
             <div>✉️ msscharitabletrust4u@gmail.com</div>
-            <div className="pt-1 text-white/35">12A &amp; 80G Certified · Reg. No. MSST/2024</div>
+            <div className="pt-1 text-white/35">Reg. No. MSST/2024</div>
           </div>
         </div>
       </div>

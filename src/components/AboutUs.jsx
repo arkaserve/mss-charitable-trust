@@ -16,7 +16,7 @@ export default function AboutUs() {
           <h2 className="text-3xl md:text-4xl text-gray-900 mb-4">Who We Are</h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">
             MSS Charitable Trust is a registered non-profit working at the grassroots level to uplift orphans,
-            widows, and underserved communities across Telangana and Andhra Pradesh.
+            widows, and underserved communities across Telangana and India.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ export default function AboutUs() {
           <div className="h-8 w-px bg-gray-200 hidden sm:block" />
           <div>
             <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">Operating Since</div>
-            <div className="text-sm text-gray-700 font-medium">2020 · Telangana &amp; Andhra Pradesh</div>
+            <div className="text-sm text-gray-700 font-medium">2020 · Telangana &amp; India</div>
           </div>
           <a
             href="#contact"

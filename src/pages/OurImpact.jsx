@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const stats = [
-  { num: '500+', label: 'Families Helped',    sub: 'Across Andhra Pradesh',      icon: '🏠' },
+  { num: '500+', label: 'Families Helped',    sub: 'Across India',      icon: '🏠' },
   { num: '12',   label: 'Health Camps',        sub: 'Free medical check-ups',     icon: '🏥' },
   { num: '80+',  label: 'Children in Care',    sub: 'Shelter, food & schooling',  icon: '👧' },
   { num: '200+', label: 'Students Supported',  sub: 'Scholarships & kits',        icon: '🎓' },
@@ -16,7 +16,7 @@ const stories = [
     category: 'Education',
     title: 'School Supplies for 25 Children',
     desc: 'Notebooks, uniforms, and bags distributed to children in two villages. All 25 continued their school year without dropping out.',
-    detail: '25 children · Andhra Pradesh',
+    detail: '25 children · India',
   },
   {
     img: 'https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=700&q=80',
@@ -24,7 +24,7 @@ const stories = [
     category: 'Health Camp',
     title: 'Free Medical Camp — 60 Adults Treated',
     desc: 'Blood pressure, eye, and dental screenings plus basic medicines. Six patients referred for further hospital treatment at no cost.',
-    detail: '60 adults · Rural Andhra Pradesh',
+    detail: '60 adults · Rural India',
   },
   {
     img: 'https://images.unsplash.com/photo-1573496546038-82f9c39f6365?auto=format&fit=crop&w=700&q=80',
@@ -32,7 +32,7 @@ const stories = [
     category: 'Women Empowerment',
     title: 'Livelihood Skills for 10 Widowed Women',
     desc: 'Tailoring and handicraft training over 6 weeks. Eight of ten participants now earning independently through home-based work.',
-    detail: '10 women · Andhra Pradesh',
+    detail: '10 women · India',
   },
 ]
 
@@ -46,7 +46,7 @@ export default function OurImpact() {
   return (
     <>
       {/* ── Hero ── */}
-      <div className="relative flex flex-col justify-end overflow-hidden" style={{ height: 420 }}>
+      <div className="relative flex flex-col justify-end overflow-hidden" style={{ height: 145 }}>
         <div
           className="absolute inset-0"
           style={{
@@ -56,13 +56,12 @@ export default function OurImpact() {
           }}
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,34,24,0.96) 0%, rgba(8,34,24,0.60) 50%, rgba(8,34,24,0.20) 100%)' }} />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-16 w-full">
-          <div className="text-xs font-bold uppercase tracking-widest text-forest-light mb-3">Our Impact</div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-black leading-tight mb-4 max-w-3xl"
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-8 w-full">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl text-white font-black leading-tight mb-2 whitespace-nowrap"
             style={{ textShadow: '0 2px 16px rgba(0,0,0,0.4)' }}>
             Proof That It Works
           </h1>
-          <p className="text-white/75 text-base max-w-xl leading-relaxed">
+          <p className="text-white/75 text-sm max-w-xl leading-relaxed">
             Every number here is a life touched. Every story is real. Every rupee is accounted for.
           </p>
         </div>
@@ -95,7 +94,7 @@ export default function OurImpact() {
           <p className="text-white font-bold text-xl md:text-2xl leading-snug mb-4">
             We came with nothing. MSS gave our children a school, our family a doctor, and me a reason to hope again.
           </p>
-          <div className="text-white/70 text-sm">— Beneficiary family, Andhra Pradesh</div>
+          <div className="text-white/70 text-sm">— Beneficiary family, India</div>
         </div>
       </div>
 

@@ -11,7 +11,7 @@ const stories = [
     category: 'Health Camp',
     title: 'Free Medical Camp — 60 Adults Treated',
     desc: 'Blood pressure, eye, and dental screenings plus basic medicines provided at zero cost. Six patients referred for further hospital treatment.',
-    detail: '60 adults treated · Rural Andhra Pradesh',
+    detail: '60 adults treated · Rural India',
   },
   {
     amount: '₹9,500',

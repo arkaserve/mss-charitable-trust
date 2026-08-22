@@ -1,4 +1,6 @@
-export default function CTABand({ openDonate }) {
+import { Link } from 'react-router-dom'
+
+export default function CTABand() {
   return (
     <div className="bg-forest py-16">
       <div className="max-w-6xl mx-auto px-6 text-center">
@@ -9,15 +11,15 @@ export default function CTABand({ openDonate }) {
           Your support makes every meal, every scholarship, every health check-up possible.
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
-          <a href="#contact" className="bg-white text-forest font-bold px-8 py-3.5 rounded text-sm hover:bg-gray-100 transition-colors">
+          <Link to="/contact" className="bg-white text-forest font-bold px-8 py-3.5 rounded text-sm hover:bg-gray-100 transition-colors">
             Get in Touch
-          </a>
-          <button
-            onClick={openDonate}
+          </Link>
+          <Link
+            to="/get-involved"
             className="border border-white/50 text-white font-bold px-8 py-3.5 rounded text-sm hover:bg-white/10 transition-colors"
           >
             Donate Now →
-          </button>
+          </Link>
         </div>
       </div>
     </div>
