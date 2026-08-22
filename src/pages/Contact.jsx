@@ -61,7 +61,7 @@ export default function Contact() {
       </div>
 
       {/* ── Main 2-column section ── */}
-      <div className="pt-6 pb-14 sm:pt-8 sm:pb-20 px-4 sm:px-6" style={{ backgroundColor: 'rgb(245,240,232)' }}>
+      <div className="pt-6 pb-10 sm:pt-8 sm:pb-12 px-4 sm:px-6" style={{ backgroundColor: 'rgb(245,240,232)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
 
@@ -141,7 +141,7 @@ export default function Contact() {
               {/* Donation callout box */}
               <div className="mt-auto rounded-xl p-6" style={{ backgroundColor: 'rgb(82,68,42)' }}>
                 <div className="font-bold text-white text-base mb-1">Want to make a donation?</div>
-                <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgb(212,185,140)' }}>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgb(212,185,140)' }}>
                   Find all bank transfer and UPI payment details on our Donate page.
                 </p>
                 <Link
@@ -155,7 +155,7 @@ export default function Contact() {
             </div>
 
             {/* ── RIGHT: Form card ── */}
-            <div className="bg-white rounded-2xl shadow-md px-7 sm:px-8 py-8 sm:py-10 h-full">
+            <div className="bg-white rounded-2xl shadow-md px-7 sm:px-8 py-8 sm:py-10 flex flex-col">
               <h2
                 className="text-xl sm:text-2xl font-bold text-gray-900 mb-7"
                 style={{ fontFamily: "'Lora', serif" }}
@@ -163,7 +163,7 @@ export default function Contact() {
                 Send Us a Message
               </h2>
 
-              <form onSubmit={submit} className="space-y-5">
+              <form onSubmit={submit} className="space-y-5 flex flex-col flex-1">
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">Full Name</label>
@@ -219,7 +219,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="w-full py-3 rounded-lg font-semibold text-white text-base transition-all hover:opacity-90 disabled:opacity-60"
+                  className="mt-auto w-full py-3 rounded-lg font-semibold text-white text-base transition-all hover:opacity-90 disabled:opacity-60"
                   style={{ backgroundColor: 'rgb(82,68,42)' }}
                 >
                   {status === 'sending' ? 'Sending…' : 'Send Message'}

@@ -26,33 +26,33 @@ const BankIcon = () => (
 const whyDonate = [
   {
     icon: '📚',
-    title: 'Education for Every Child',
-    desc: 'We fund scholarships, school kits, free tuition centres, and competitive exam coaching for students from low-income families across India.',
+    title: 'Education Support',
+    desc: 'We fund scholarships exclusively for orphaned children and families in extreme poverty, and distribute school kits — books, bags, uniforms, and stationery — before every academic year.',
   },
   {
     icon: '🏥',
-    title: 'Free Healthcare Camps',
-    desc: 'Doctors, medicines, and diagnostics brought directly to rural communities — general check-ups, eye care, dental care, and women\'s health awareness.',
+    title: 'Free Medical Camps',
+    desc: 'We conduct free medical camps in villages, providing blood pressure, diabetes & BMI screening, general physician consultations, free medicines, and specialist referrals for critical cases.',
   },
   {
     icon: '🙏',
-    title: 'Women & Widow Empowerment',
-    desc: 'Vocational training, self-help groups, and financial support help widowed and vulnerable women rebuild their independence and dignity.',
+    title: 'Health Awareness Programs',
+    desc: 'We educate communities on hygiene, sanitation, nutrition, and disease prevention — with a focus on maternal & child health and school health education drives.',
   },
   {
     icon: '👧',
     title: 'Orphan & Child Care',
-    desc: 'Safe shelter, daily nutrition, school enrolment, and emotional care for orphaned children — giving them a home and a future.',
+    desc: 'We are committed to supporting orphaned and abandoned children — ensuring they have access to education, care, and a safe environment. This is a cause close to our heart that we are actively working to expand.',
   },
   {
     icon: '🤝',
-    title: 'Community Development',
-    desc: 'Sanitation drives, awareness camps, elder care, and disaster relief that lift entire villages — not just individual families.',
+    title: 'Women & Widow Support',
+    desc: 'We stand by widowed and vulnerable women — providing livelihood support, awareness programmes, and monthly assistance to help them reclaim their dignity and independence.',
   },
   {
     icon: '✅',
     title: '100% Transparent & Accountable',
-    desc: 'Every donation is used directly for charitable programmes. We are registered under the Indian Trusts Act, 1882, and issue 80G receipts for all eligible donations.',
+    desc: 'Every rupee is tracked to a specific programme. We personally verify each beneficiary, publish outcome reports, and follow up at 3, 6, and 12 months to measure lasting impact.',
   },
 ]
 
