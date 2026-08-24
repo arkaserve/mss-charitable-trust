@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const subNav = [
-  { href: '#who-we-are',     label: 'Founders'          },
+  { href: '#in-memory',      label: 'In Memory'        },
+  { href: '#who-we-are',     label: 'Founders'         },
   { href: '#our-story',      label: 'Our Story'        },
   { href: '#vision-mission', label: 'Vision & Mission' },
   { href: '#our-approach',   label: 'Our Approach'     },
@@ -28,7 +29,7 @@ const values = [
 
 
 export default function AboutUs() {
-  const [activeId, setActiveId] = useState('who-we-are')
+  const [activeId, setActiveId] = useState('in-memory')
 
   useEffect(() => {
     const ids = subNav.map(s => s.href.replace('#', ''))
@@ -73,7 +74,7 @@ export default function AboutUs() {
       <div className="sticky top-16 z-30 bg-forest-deep border-b border-white/10">
         <div className="max-w-6xl mx-auto px-2 sm:px-6">
           {/* Mobile: 3-column grid (2 rows) | Desktop: single row flex */}
-          <div className="grid grid-cols-3 sm:flex sm:flex-row">
+          <div className="grid grid-cols-3 sm:flex sm:flex-row overflow-x-auto">
             {subNav.map(s => {
               const id = s.href.replace('#', '')
               const isActive = activeId === id
@@ -101,6 +102,82 @@ export default function AboutUs() {
         </div>
       </div>
 
+      {/* ── 0 — In Memory ── */}
+      <section id="in-memory" className="pt-10 pb-28 scroll-mt-28" style={{ backgroundColor: 'rgb(245,240,232)' }}>
+        <div className="max-w-6xl mx-auto px-6">
+
+          {/* Eyebrow */}
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4" style={{ backgroundColor: 'rgb(212,201,175)', color: 'rgb(92,73,45)' }}>
+              🕊️ In Loving Memory
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold leading-snug" style={{ color: 'rgb(52,40,24)', fontFamily: "'Lora', serif" }}>
+              The Soul Behind MSS Charitable Trust
+            </h2>
+            <div className="w-16 h-0.5 mx-auto mt-5" style={{ backgroundColor: 'rgb(200,169,110)' }} />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            <div className="flex flex-col gap-6">
+              {/* Photo */}
+              <div className="shadow-2xl rounded-2xl overflow-hidden" style={{ border: '4px solid rgb(200,169,110)' }}>
+                <div style={{ overflow: 'hidden', height: 400 }}>
+                  <img
+                    src="/photos/sudhakar-rao.jpg"
+                    alt="Shri Mikkili Sudhakara Rao"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                  />
+                </div>
+              </div>
+
+              {/* Quote box */}
+              <div className="rounded-xl p-6" style={{ backgroundColor: 'rgb(232,224,210)', border: '1px solid rgb(212,201,175)' }}>
+                <p className="text-base italic leading-relaxed mb-3" style={{ color: 'rgb(82,68,42)', fontFamily: "'Lora', serif" }}>
+                  "He lived simply, gave generously, and loved unconditionally. His life was a quiet act of service — and that is the foundation on which MSS stands."
+                </p>
+                <div className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgb(139,115,85)' }}>
+                  — In Memory of Shri Mikkili Sudhakara Rao
+                </div>
+              </div>
+            </div>
+
+            {/* Tribute text */}
+            <div className="space-y-6">
+              <blockquote className="border-l-4 pl-5 py-1" style={{ borderColor: 'rgb(200,169,110)' }}>
+                <p className="text-lg italic leading-relaxed" style={{ color: 'rgb(82,68,42)', fontFamily: "'Lora', serif" }}>
+                  "He lived simply, gave generously, and loved unconditionally. His life was a quiet act of service — and that is the foundation on which MSS stands."
+                </p>
+              </blockquote>
+
+              <p className="text-sm leading-relaxed" style={{ color: 'rgb(82,68,42)' }}>
+                MSS Charitable Trust carries the initials of <strong>Mikkili Sudhakar Rao</strong> — a man who believed
+                that kindness was not a gesture but a way of life. Born on 25th October 1956, he spent his
+                years in quiet service to those around him — always giving, never seeking recognition.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgb(82,68,42)' }}>
+                When he passed on 11th July 2020, his family chose to honour his memory not with words alone,
+                but with action. The Trust was founded in his name so that his spirit of compassion would
+                continue to touch the lives of the vulnerable, the forgotten, and the hopeful — long after
+                his time on earth.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: 'rgb(82,68,42)' }}>
+                Every scholarship we fund, every medical camp we run, every family we help — is a tribute
+                to him. His name lives on in every life we serve.
+              </p>
+
+              <div className="rounded-xl p-5 mt-2" style={{ backgroundColor: 'rgb(232,224,210)', border: '1px solid rgb(212,201,175)' }}>
+                <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgb(139,115,85)' }}>In His Honour</div>
+                <p className="text-sm italic" style={{ color: 'rgb(82,68,42)' }}>
+                  The <strong>M</strong> in MSS stands for <strong>Mikkili</strong> — his family name, his legacy, his love.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── 1 — Founders ── */}
       <section id="who-we-are" className="pt-8 pb-28 scroll-mt-28" style={{ backgroundColor: 'rgb(245,240,232)' }}>
         <div className="max-w-6xl mx-auto px-6">
@@ -111,20 +188,20 @@ export default function AboutUs() {
               The Man Behind the Mission
             </div>
             <h2 className="text-3xl md:text-4xl font-bold leading-snug" style={{ color: 'rgb(52,40,24)', fontFamily: "'Lora', serif" }}>
-              Sunil Mikkili — Co-Founder, MSS Charitable Trust
+              Sunil Kumar Mikkili — Founder, MSS Charitable Trust
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
 
             {/* Left: photo + quote */}
-            <div className="flex flex-col gap-6">
-              <div className="rounded-xl overflow-hidden shadow-lg" style={{ border: '1px solid rgb(212,201,175)' }}>
+            <div className="flex flex-col gap-6 h-full">
+              <div className="rounded-xl overflow-hidden shadow-lg flex-1" style={{ border: '1px solid rgb(212,201,175)' }}>
                 <img
-                  src="/photos/founder.jpg"
-                  alt="Sunil Mikkili — Co-Founder, MSS Charitable Trust"
-                  className="w-full object-cover object-top"
-                  style={{ height: 420 }}
+                  src="/photos/sunil.jpg"
+                  alt="Sunil Kumar Mikkili — Founder, MSS Charitable Trust"
+                  className="w-full h-full object-cover object-top"
+                  style={{ display: 'block' }}
                 />
               </div>
 
@@ -135,7 +212,7 @@ export default function AboutUs() {
                   or what life has dealt them. That belief is why MSS exists."
                 </p>
                 <div className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgb(139,115,85)' }}>
-                  — Sunil Mikkili, Co-Founder
+                  — Sunil Kumar Mikkili, Founder
                 </div>
               </div>
             </div>
@@ -143,7 +220,7 @@ export default function AboutUs() {
             {/* Right: bio */}
             <div className="space-y-5 pt-1">
               <p className="text-base leading-relaxed" style={{ color: 'rgb(82,68,42)' }}>
-                Sunil Mikkili is the Co-Founder of MSS Charitable Trust, a registered nonprofit
+                Sunil Kumar Mikkili is the Founder of MSS Charitable Trust, a registered nonprofit
                 organisation dedicated to uplifting orphaned children, widowed women, students, and
                 underserved communities across India. With a deep sense of social
                 responsibility and compassion, he co-established the Trust in 2020 after witnessing
@@ -151,7 +228,7 @@ export default function AboutUs() {
                 children who had never entered a classroom, and widows with no income or support.
               </p>
               <p className="text-base leading-relaxed" style={{ color: 'rgb(82,68,42)' }}>
-                As Co-Founder, Sunil provides strategic leadership and hands-on direction across all
+                As Founder, Sunil provides strategic leadership and hands-on direction across all
                 charitable initiatives. Under his guidance, MSS has conducted free medical camps,
                 distributed educational kits, run women's empowerment programmes, and provided
                 emergency relief to families in crisis. His commitment to verified, transparent giving

@@ -90,25 +90,20 @@ export default function Home({ openDonate }) {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-            {/* Logo placeholder */}
+            {/* Sudhakar Rao photo */}
             <div className="relative flex items-center justify-center">
               <div
-                className="rounded-2xl shadow-xl w-full flex items-center justify-center"
+                className="rounded-2xl shadow-xl w-full overflow-hidden"
                 style={{
                   height: 420,
-                  background: 'linear-gradient(135deg, #1A5C38 0%, #0d3a22 100%)',
                   border: '2px solid rgba(203,125,11,0.35)',
                 }}
               >
-                <div className="flex flex-col items-center gap-6">
-                  <Logo size={220} />
-                  <div
-                    className="text-base font-bold uppercase tracking-widest"
-                    style={{ color: 'rgba(203,125,11,0.9)', letterSpacing: '0.2em' }}
-                  >
-                    MSS Charitable Trust
-                  </div>
-                </div>
+                <img
+                  src="/photos/sudhakar-rao.jpg"
+                  alt="Shri Mikkili Sudhakara Rao"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                />
               </div>
             </div>
 
