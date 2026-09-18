@@ -84,8 +84,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgb(92,73,45)' }}>Phone</div>
-                    <a href="tel:+919866376367" className="text-sm font-semibold hover:underline" style={{ color: 'rgb(139,115,85)' }}>
-                      +91 98663 76367
+                    <a href="tel:+919490284208" className="text-sm font-semibold hover:underline block" style={{ color: 'rgb(139,115,85)' }}>
+                      +91 94902 84208 <span className="text-xs font-normal opacity-70">(India)</span>
+                    </a>
+                    <a href="tel:+16109680033" className="text-sm font-semibold hover:underline block mt-0.5" style={{ color: 'rgb(139,115,85)' }}>
+                      +1 610-968-0033 <span className="text-xs font-normal opacity-70">(USA)</span>
                     </a>
                     <div className="text-gray-400 text-xs mt-0.5">Mon – Sat, 9 AM – 6 PM</div>
                   </div>

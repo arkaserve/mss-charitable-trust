@@ -116,8 +116,11 @@ export default function GetInvolved() {
                 </div>
                 <div>
                   <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgb(107,91,62)' }}>Phone</div>
-                  <a href="tel:+919866376367" className="text-sm font-semibold" style={{ color: 'rgb(139,115,85)' }}>
-                    +91 98663 76367
+                  <a href="tel:+919490284208" className="text-sm font-semibold block" style={{ color: 'rgb(139,115,85)' }}>
+                    +91 94902 84208 <span className="text-xs font-normal opacity-70">(India)</span>
+                  </a>
+                  <a href="tel:+16109680033" className="text-sm font-semibold block mt-0.5" style={{ color: 'rgb(139,115,85)' }}>
+                    +1 610-968-0033 <span className="text-xs font-normal opacity-70">(USA)</span>
                   </a>
                 </div>
               </div>
@@ -181,44 +184,7 @@ export default function GetInvolved() {
                 <div className="text-base font-black" style={{ color: 'rgb(52,40,24)' }}>mss.trust@sbi</div>
               </div>
 
-              {/* QR Code placeholder */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="rounded-xl overflow-hidden p-2" style={{ backgroundColor: 'rgb(245,240,232)', border: '1px solid rgb(212,201,175)' }}>
-                  <svg viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg">
-                    {/* Corner squares */}
-                    <rect x="8" y="8" width="32" height="32" rx="3" fill="none" stroke="rgb(52,40,24)" strokeWidth="4"/>
-                    <rect x="14" y="14" width="20" height="20" rx="1" fill="rgb(52,40,24)"/>
-                    <rect x="80" y="8" width="32" height="32" rx="3" fill="none" stroke="rgb(52,40,24)" strokeWidth="4"/>
-                    <rect x="86" y="14" width="20" height="20" rx="1" fill="rgb(52,40,24)"/>
-                    <rect x="8" y="80" width="32" height="32" rx="3" fill="none" stroke="rgb(52,40,24)" strokeWidth="4"/>
-                    <rect x="14" y="86" width="20" height="20" rx="1" fill="rgb(52,40,24)"/>
-                    {/* Data dots */}
-                    {[50,56,62,68,74,80].map(x => [50,56,62,68,74,80].map(y =>
-                      Math.random() > 0.45 ? <rect key={`${x}-${y}`} x={x} y={y} width="4" height="4" fill="rgb(52,40,24)"/> : null
-                    ))}
-                    <rect x="50" y="8" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="56" y="8" width="4" height="4" fill="rgb(200,169,110)"/>
-                    <rect x="62" y="8" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="68" y="8" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="50" y="14" width="4" height="4" fill="rgb(200,169,110)"/>
-                    <rect x="62" y="14" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="74" y="14" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="8" y="50" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="14" y="50" width="4" height="4" fill="rgb(200,169,110)"/>
-                    <rect x="20" y="50" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="8" y="56" width="4" height="4" fill="rgb(200,169,110)"/>
-                    <rect x="20" y="56" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="26" y="56" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="8" y="62" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="14" y="62" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="26" y="62" width="4" height="4" fill="rgb(200,169,110)"/>
-                    <rect x="32" y="68" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="8" y="74" width="4" height="4" fill="rgb(52,40,24)"/>
-                    <rect x="20" y="74" width="4" height="4" fill="rgb(200,169,110)"/>
-                  </svg>
-                </div>
-                <div className="text-xs font-semibold" style={{ color: 'rgb(107,91,62)' }}>Scan to Pay</div>
-              </div>
+              {/* QR Code — hidden until real scanner is ready */}
 
               <div className="flex flex-wrap gap-2">
                 {['Google Pay', 'PhonePe', 'Paytm', 'BHIM'].map(app => (

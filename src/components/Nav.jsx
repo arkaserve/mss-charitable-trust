@@ -120,7 +120,8 @@ export default function Nav({ navOpen, setNavOpen, openDonate }) {
             Donate Now
           </NavLink>
           <div className="space-y-1.5 pt-2 text-xs text-white/50">
-            <div>📞 +91 98663 76367</div>
+            <div>📞 +91 94902 84208 (India)</div>
+            <div>📞 +1 610-968-0033 (USA)</div>
             <div>✉️ msscharitabletrust4u@gmail.com</div>
             <div className="pt-1 text-white/35">Reg. No. MSST/2024</div>
           </div>

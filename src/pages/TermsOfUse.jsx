@@ -90,7 +90,7 @@ export default function TermsOfUse() {
               msscharitabletrust4u@gmail.com
             </a>
           </div>
-          <div>+91 98663 76367</div>
+          <div>+91 94902 84208</div>
         </div>
       </Section>
 

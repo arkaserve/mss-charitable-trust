@@ -117,9 +117,9 @@ export default function AboutUs() {
             <div className="w-16 h-0.5 mx-auto mt-5" style={{ backgroundColor: 'rgb(200,169,110)' }} />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 h-full">
               {/* Photo */}
               <div className="shadow-2xl rounded-2xl overflow-hidden" style={{ border: '4px solid rgb(200,169,110)' }}>
                 <div style={{ overflow: 'hidden', height: 400 }}>
@@ -131,8 +131,8 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              {/* Quote box */}
-              <div className="rounded-xl p-6" style={{ backgroundColor: 'rgb(232,224,210)', border: '1px solid rgb(212,201,175)' }}>
+              {/* Quote box — grows to fill remaining height */}
+              <div className="rounded-xl p-6 flex flex-col justify-center flex-1" style={{ backgroundColor: 'rgb(232,224,210)', border: '1px solid rgb(212,201,175)' }}>
                 <p className="text-base italic leading-relaxed mb-3" style={{ color: 'rgb(82,68,42)', fontFamily: "'Lora', serif" }}>
                   "He lived simply, gave generously, and loved unconditionally. His life was a quiet act of service — and that is the foundation on which MSS stands."
                 </p>
@@ -223,7 +223,7 @@ export default function AboutUs() {
                 Sunil Kumar Mikkili is the Founder of MSS Charitable Trust, a registered nonprofit
                 organisation dedicated to uplifting orphaned children, widowed women, students, and
                 underserved communities across India. With a deep sense of social
-                responsibility and compassion, he co-established the Trust in 2020 after witnessing
+                responsibility and compassion, he established the Trust in 2020 after witnessing
                 firsthand the scale of neglect in rural villages — families without healthcare,
                 children who had never entered a classroom, and widows with no income or support.
               </p>

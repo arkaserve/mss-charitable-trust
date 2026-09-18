@@ -50,7 +50,6 @@ export default function Footer() {
             <span key={l.to} className="flex items-center">
               <Link
                 to={l.to}
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="text-base font-medium px-3 transition-colors hover:opacity-80"
                 style={{ color: '#4A7C59' }}
               >
@@ -85,7 +84,6 @@ export default function Footer() {
         <div className="flex justify-center items-center gap-2">
           <Link
             to="/privacy-policy"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-sm hover:underline"
             style={{ color: '#CB7D0B' }}
           >
@@ -94,7 +92,6 @@ export default function Footer() {
           <span className="text-sm" style={{ color: '#CB7D0B' }}>·</span>
           <Link
             to="/terms-of-use"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="text-sm hover:underline"
             style={{ color: '#CB7D0B' }}
           >

@@ -40,13 +40,6 @@ const testimonials = [
     quote: 'Managing MSS Trust has been a deeply fulfilling journey. Every day, I see how our programs directly transform lives — from children receiving their first school kit to widows starting their own businesses. The trust our community places in us is what keeps us moving forward.',
   },
   {
-    name: 'Sunil Mikkili',
-    role: 'Co-Founder, MSS Trust',
-    initials: 'SM',
-    color: '#CB7D0B',
-    quote: 'When we started MSS, we had a simple dream: no child should go to bed hungry, and no family should feel abandoned. Today, seeing the smiles on the faces we serve, I know we are on the right path. This work is bigger than any one of us.',
-  },
-  {
     name: 'Papa Rao',
     role: 'Camp Lead, MSS Trust',
     initials: 'PR',

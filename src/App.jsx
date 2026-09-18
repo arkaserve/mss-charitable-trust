@@ -11,6 +11,7 @@ import GetInvolved from './pages/GetInvolved'
 import Contact from './pages/Contact'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfUse from './pages/TermsOfUse'
+import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
   const { pathname, key } = useLocation()
@@ -28,8 +29,13 @@ function ScrollToTop() {
     if (navType === 'POP') {
       const saved = sessionStorage.getItem(`scroll:${key}`)
       if (saved !== null) {
-        // Wait one frame for React to finish rendering before restoring
-        requestAnimationFrame(() => window.scrollTo(0, parseInt(saved, 10)))
+        const y = parseInt(saved, 10)
+        // Double rAF: first frame commits React's render, second waits for layout/images
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            window.scrollTo(0, y)
+          })
+        })
       }
     } else {
       window.scrollTo(0, 0)
@@ -64,8 +70,8 @@ function Layout() {
           <Route path="/contact"        element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use"   element={<TermsOfUse />} />
-          {/* Fallback */}
-          <Route path="*"               element={<Home openDonate={openDonate} />} />
+          {/* 404 */}
+          <Route path="*"               element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
