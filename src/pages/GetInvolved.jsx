@@ -104,10 +104,10 @@ export default function GetInvolved() {
 
         {/* ── 3 Cards ── */}
         <div className="max-w-5xl mx-auto px-5 sm:px-6 pb-14 sm:pb-20 pt-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+          <div className="flex justify-center">
 
-            {/* Card 1: Get in Touch */}
-            <div className="bg-white rounded-xl p-5 flex flex-col gap-4 h-full" style={{ border: '1px solid rgb(212,201,175)' }}>
+            {/* Card 1: Get in Touch — centred, max width */}
+            <div className="bg-white rounded-xl p-6 flex flex-col gap-5 w-full max-w-md" style={{ border: '1px solid rgb(212,201,175)' }}>
               <div className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgb(107,91,62)' }}>Get in Touch</div>
 
               <div className="flex items-start gap-3">
@@ -116,10 +116,10 @@ export default function GetInvolved() {
                 </div>
                 <div>
                   <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgb(107,91,62)' }}>Phone</div>
-                  <a href="tel:+919490284208" className="text-sm font-semibold block" style={{ color: 'rgb(139,115,85)' }}>
+                  <a href="tel:+919490284208" className="text-sm font-semibold block hover:underline" style={{ color: 'rgb(139,115,85)' }}>
                     +91 94902 84208 <span className="text-xs font-normal opacity-70">(India)</span>
                   </a>
-                  <a href="tel:+16109680033" className="text-sm font-semibold block mt-0.5" style={{ color: 'rgb(139,115,85)' }}>
+                  <a href="tel:+16109680033" className="text-sm font-semibold block mt-0.5 hover:underline" style={{ color: 'rgb(139,115,85)' }}>
                     +1 610-968-0033 <span className="text-xs font-normal opacity-70">(USA)</span>
                   </a>
                 </div>
@@ -131,7 +131,7 @@ export default function GetInvolved() {
                 </div>
                 <div>
                   <div className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: 'rgb(107,91,62)' }}>Email</div>
-                  <a href="mailto:msscharitabletrust4u@gmail.com" className="text-sm font-semibold break-all" style={{ color: 'rgb(139,115,85)' }}>
+                  <a href="mailto:msscharitabletrust4u@gmail.com" className="text-sm font-semibold break-all hover:underline" style={{ color: 'rgb(139,115,85)' }}>
                     msscharitabletrust4u@gmail.com
                   </a>
                 </div>
@@ -151,49 +151,8 @@ export default function GetInvolved() {
 
             </div>
 
-            {/* Card 2: Bank Transfer */}
-            <div className="bg-white rounded-xl p-5 flex flex-col gap-4 h-full" style={{ border: '1px solid rgb(212,201,175)' }}>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full shrink-0 flex items-center justify-center" style={{ backgroundColor: 'rgb(200,169,110)' }}>
-                  <BankIcon />
-                </div>
-                <div className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgb(107,91,62)' }}>IN India — Bank Transfer</div>
-              </div>
-
-              <div className="flex flex-col gap-0 divide-y" style={{ borderColor: 'rgb(230,220,200)' }}>
-                {[
-                  ['Account Name', 'MSS Charitable Trust'],
-                  ['Bank',         'State Bank of India'],
-                  ['Account No',   'XXXX XXXX XXXX'],
-                  ['IFSC Code',    'SBIN00XXXXX'],
-                  ['UPI',          'mss.trust@sbi'],
-                ].map(([label, value]) => (
-                  <div key={label} className="flex justify-between items-center py-2.5" style={{ borderColor: 'rgb(230,220,200)' }}>
-                    <span className="text-xs" style={{ color: 'rgb(139,115,85)' }}>{label}</span>
-                    <span className="text-xs font-bold text-right ml-3" style={{ color: 'rgb(52,40,24)' }}>{value}</span>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-
-            {/* Card 3: UPI */}
-            <div className="bg-white rounded-xl p-5 flex flex-col gap-4 h-full" style={{ border: '1px solid rgb(212,201,175)' }}>
-              <div>
-                <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: 'rgb(107,91,62)' }}>UPI ID</div>
-                <div className="text-base font-black" style={{ color: 'rgb(52,40,24)' }}>mss.trust@sbi</div>
-              </div>
-
-              {/* QR Code — hidden until real scanner is ready */}
-
-              <div className="flex flex-wrap gap-2">
-                {['Google Pay', 'PhonePe', 'Paytm', 'BHIM'].map(app => (
-                  <span key={app} className="text-xs font-semibold px-2.5 py-1 rounded-full" style={{ backgroundColor: 'rgb(245,240,232)', color: 'rgb(107,91,62)' }}>
-                    {app}
-                  </span>
-                ))}
-              </div>
-            </div>
+            {/* Card 2: Bank Transfer — hidden until details are ready */}
+            {/* Card 3: UPI — hidden until QR is ready */}
 
           </div>
         </div>
