@@ -59,7 +59,7 @@ export default function AboutUs() {
           }}
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,34,24,0.96) 0%, rgba(8,34,24,0.65) 45%, rgba(8,34,24,0.25) 100%)' }} />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pb-8 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 pb-8 w-full">
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-white font-black leading-tight mb-2 whitespace-nowrap" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.4)' }}>
             About MSS Charitable Trust
           </h1>
@@ -104,7 +104,7 @@ export default function AboutUs() {
 
       {/* ── 0 — In Memory ── */}
       <section id="in-memory" className="pt-10 pb-28 scroll-mt-28" style={{ backgroundColor: 'rgb(245,240,232)' }}>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
 
           {/* Eyebrow */}
           <div className="text-center mb-10">
@@ -180,7 +180,7 @@ export default function AboutUs() {
 
       {/* ── 1 — Founders ── */}
       <section id="who-we-are" className="pt-8 pb-28 scroll-mt-28" style={{ backgroundColor: 'rgb(245,240,232)' }}>
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
 
           {/* Eyebrow + heading */}
           <div className="mb-7">
@@ -250,7 +250,7 @@ export default function AboutUs() {
 
       {/* ── 2 — Our Story ── */}
       <section id="our-story" className="py-44 bg-white scroll-mt-28">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-xs font-bold uppercase tracking-widest text-forest mb-3">Our Story</div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 max-w-lg leading-snug">How It All Began</h2>
 
@@ -295,7 +295,7 @@ export default function AboutUs() {
 
       {/* ── 3 — Vision & Mission ── */}
       <section id="vision-mission" className="py-44 bg-stone-900 scroll-mt-28">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Mission */}
             <div className="bg-white/5 border border-white/10 rounded-xl p-14">
@@ -354,7 +354,7 @@ export default function AboutUs() {
 
       {/* ── 4 — Our Approach ── */}
       <section id="our-approach" className="py-44 bg-forest-xlight scroll-mt-28">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-xs font-bold uppercase tracking-widest text-forest mb-4">Our Approach</div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 max-w-sm leading-snug">How We Work</h2>
@@ -382,7 +382,7 @@ export default function AboutUs() {
 
       {/* ── 5 — Our Values ── */}
       <section id="our-values" className="py-28 bg-cream scroll-mt-28">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-xs font-bold uppercase tracking-widest text-forest mb-3">Our Values</div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">What We Stand For</h2>
 

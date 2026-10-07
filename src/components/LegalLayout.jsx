@@ -2,7 +2,7 @@ export default function LegalLayout({ title, updated, children }) {
   return (
     <>
       {/* Hero */}
-      <div className="bg-forest-deep px-4 sm:px-6 py-12 sm:py-16">
+      <div className="bg-forest-deep px-5 sm:px-8 lg:px-16 py-12 sm:py-16">
         <div className="max-w-3xl mx-auto">
           <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-3">Legal</div>
           <h1
@@ -16,7 +16,7 @@ export default function LegalLayout({ title, updated, children }) {
       </div>
 
       {/* Content card */}
-      <div className="bg-gray-50 min-h-screen px-4 sm:px-6 py-10 sm:py-16">
+      <div className="bg-gray-50 min-h-screen px-5 sm:px-8 lg:px-16 py-10 sm:py-16">
         <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 sm:px-10 md:px-14 py-10 sm:py-14">
             <div className="space-y-10 text-gray-600" style={{ fontFamily: "'Inter', sans-serif", fontSize: '15px', lineHeight: '1.85' }}>

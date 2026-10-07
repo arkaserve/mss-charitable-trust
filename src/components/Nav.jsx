@@ -17,7 +17,7 @@ export default function Nav({ navOpen, setNavOpen, openDonate }) {
     <>
       {/* ── Main nav ── */}
       <nav className="sticky top-0 z-50 bg-forest-deep shadow-md">
-        <div className="w-full px-4 sm:px-6 flex items-center justify-between h-16">
+        <div className="w-full px-5 sm:px-8 lg:px-16 flex items-center justify-between h-16">
 
           {/* Logo */}
           <Link to="/" onClick={close} className="flex items-center gap-3 shrink-0">
@@ -42,7 +42,7 @@ export default function Nav({ navOpen, setNavOpen, openDonate }) {
               </NavLink>
             ))}
             <NavLink
-              to="/get-involved"
+              to="/get-involved#donate"
               className="bg-marigold hover:bg-marigold-dark text-white text-sm font-bold px-5 py-2 rounded-full transition-colors ml-1 whitespace-nowrap"
             >
               Donate Now
@@ -113,7 +113,7 @@ export default function Nav({ navOpen, setNavOpen, openDonate }) {
         {/* Drawer footer */}
         <div className="px-6 pb-8 pt-4 border-t border-white/10 shrink-0 space-y-3">
           <NavLink
-            to="/get-involved"
+            to="/get-involved#donate"
             onClick={close}
             className="w-full bg-marigold hover:bg-marigold-dark text-white font-bold text-sm py-3.5 rounded-full transition-colors min-h-[48px] touch-manipulation text-center block"
           >

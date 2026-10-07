@@ -2,7 +2,7 @@ import LegalLayout, { Section } from '../components/LegalLayout'
 
 export default function TermsOfUse() {
   return (
-    <LegalLayout title="Terms of Use" updated="January 2024">
+    <LegalLayout title="Terms of Use" updated="October 2026">
 
       <Section title="1. Acceptance of Terms">
         <p>

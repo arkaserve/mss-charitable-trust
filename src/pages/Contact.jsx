@@ -29,16 +29,20 @@ export default function Contact() {
 
   const submit = async e => {
     e.preventDefault()
+    try {
+      const last = parseInt(localStorage.getItem('mss_last_submit') || '0', 10)
+      if (Date.now() - last < 60000) { setStatus('cooldown'); return }
+    } catch {}
     setStatus('sending')
     try {
       const data = new FormData()
-      data.append('access_key', '26faa4c5-1b33-4359-9d5e-c4f5cfef4318')
+      data.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY)
       data.append('subject', 'New Message — MSS Charitable Trust Website')
       data.append('from_name', 'MSS Trust Website')
       Object.entries(form).forEach(([k, v]) => data.append(k, v))
       const res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
       const json = await res.json()
-      if (json.success) { setStatus('success'); setForm(INIT) }
+      if (json.success) { setStatus('success'); setForm(INIT); try { localStorage.setItem('mss_last_submit', String(Date.now())) } catch {} }
       else setStatus('error')
     } catch { setStatus('error') }
   }
@@ -49,8 +53,8 @@ export default function Contact() {
   return (
     <>
       {/* ── Small hero ── */}
-      <div className="bg-forest-deep py-7 px-4 text-left" style={{ minHeight: 145, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-        <div className="max-w-6xl mx-auto w-full px-2">
+      <div className="bg-forest-deep py-7 px-5 sm:px-8 lg:px-16 text-left" style={{ minHeight: 145, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+        <div className="max-w-7xl mx-auto w-full px-2">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mb-2 whitespace-nowrap">
             We'd Love to Hear From You
           </h1>
@@ -61,8 +65,8 @@ export default function Contact() {
       </div>
 
       {/* ── Main 2-column section ── */}
-      <div className="pt-6 pb-10 sm:pt-8 sm:pb-12 px-4 sm:px-6" style={{ backgroundColor: 'rgb(245,240,232)' }}>
-        <div className="max-w-5xl mx-auto">
+      <div className="pt-6 pb-10 sm:pt-8 sm:pb-12 px-5 sm:px-8 lg:px-16" style={{ backgroundColor: 'rgb(245,240,232)' }}>
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
 
             {/* ── LEFT: Get in Touch ── */}
@@ -148,7 +152,7 @@ export default function Contact() {
                   Find all bank transfer and UPI payment details on our Donate page.
                 </p>
                 <Link
-                  to="/get-involved"
+                  to="/get-involved#donate"
                   className="inline-block font-semibold text-sm px-6 py-2.5 rounded-lg transition-all hover:opacity-90"
                   style={{ backgroundColor: 'rgb(168,142,98)', color: 'white' }}
                 >
@@ -183,7 +187,7 @@ export default function Contact() {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
                   <input name="phone" type="tel" value={form.phone} onChange={set}
-                    className={inputCls} style={inputStyle} />
+                    placeholder="+91 XXXXX XXXXX" className={inputCls} style={inputStyle} />
                 </div>
 
                 <div>
@@ -216,6 +220,11 @@ export default function Contact() {
                 {status === 'error' && (
                   <div className="bg-red-50 border border-red-200 text-red-700 text-sm p-4 rounded-lg">
                     Something went wrong. Please email us directly.
+                  </div>
+                )}
+                {status === 'cooldown' && (
+                  <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 text-sm p-4 rounded-lg">
+                    Please wait a minute before submitting again.
                   </div>
                 )}
 

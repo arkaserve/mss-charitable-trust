@@ -80,7 +80,7 @@ export default function Home({ openDonate }) {
 
       {/* 1c ── Our Heart */}
       <section className="py-20 bg-cream">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
             {/* Sudhakar Rao photo */}
@@ -133,7 +133,7 @@ export default function Home({ openDonate }) {
       {/* 2 ── Programs — JWF-style: dark centered heading + card grid */}
       <section className="bg-stone-900">
         {/* Heading band */}
-        <div className="pt-16 pb-10 text-center px-6">
+        <div className="pt-16 pb-10 text-center px-5 sm:px-8 lg:px-16">
           <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-4">What We Do</div>
           <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
             Our Mission: We Care for People
@@ -142,8 +142,8 @@ export default function Home({ openDonate }) {
         </div>
 
         {/* Cards */}
-        <div className="pb-16 px-6">
-          <div className="max-w-6xl mx-auto">
+        <div className="pb-16 px-5 sm:px-8 lg:px-16">
+          <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
               {programs.map((p, i) => (
                 <div
@@ -166,14 +166,14 @@ export default function Home({ openDonate }) {
 
       {/* 3 ── Our Impact */}
       <section className="py-20 bg-forest">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-center mb-8">
             <div className="text-xs font-bold uppercase tracking-widest text-forest-light mb-2">Results on the Ground</div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Our Impact</h2>
           </div>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-white/80 text-base leading-relaxed mb-4">
-              Since our inception in 2020, we have significantly changed the lives of hundreds of
+              Since our founding in 2026, we have significantly changed the lives of hundreds of
               families in India. We have witnessed children overcoming barriers to education,
               women achieving financial independence, and communities receiving healthcare for the first time.
             </p>
@@ -187,7 +187,7 @@ export default function Home({ openDonate }) {
 
       {/* 4 ── Community Voices */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
           <div className="text-center mb-14">
             <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-4">Community Voices</div>
             <h2
@@ -223,7 +223,7 @@ export default function Home({ openDonate }) {
 
       {/* 5 ── Dark CTA */}
       <section className="py-20" style={{ background: '#0D1F17' }}>
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-16 text-center">
           <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-5">Make a Difference Today</div>
           <h2
             className="text-3xl md:text-5xl font-black text-white leading-tight mb-6"
@@ -244,7 +244,7 @@ export default function Home({ openDonate }) {
               Get Involved Today
             </Link>
             <Link
-              to="/get-involved"
+              to="/get-involved#donate"
               className="inline-flex items-center justify-center gap-2 bg-marigold hover:bg-marigold-dark text-white font-bold text-sm uppercase tracking-widest px-8 py-4 rounded-full transition-colors"
             >
               Donate Now

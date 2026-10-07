@@ -24,14 +24,14 @@ export default function Hero() {
       />
 
       {/* Content — left-aligned like JWF */}
-      <div className="relative z-10 w-full max-w-4xl px-6 sm:px-12 pb-20 sm:pb-28">
+      <div className="relative z-10 w-full max-w-4xl px-5 sm:px-8 lg:px-16 pb-20 sm:pb-28">
 
         {/* Eyebrow label */}
         <div
           className="text-xs font-bold uppercase tracking-widest mb-5"
           style={{ color: 'rgb(200,169,110)' }}
         >
-          Nonprofit · India, India
+          Nonprofit · India
         </div>
 
         {/* Main heading */}

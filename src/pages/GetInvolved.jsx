@@ -80,7 +80,7 @@ export default function GetInvolved() {
           }}
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,34,24,0.96) 0%, rgba(8,34,24,0.65) 55%, rgba(8,34,24,0.2) 100%)' }} />
-        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 pb-8 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 pb-8 w-full">
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-white font-black leading-tight mb-2 whitespace-nowrap"
             style={{ textShadow: '0 2px 16px rgba(0,0,0,0.4)' }}>
             Donate to MSS Charitable Trust
@@ -93,8 +93,8 @@ export default function GetInvolved() {
       </div>
 
       {/* ── Every Contribution Counts ── */}
-      <div style={{ backgroundColor: 'rgb(245,240,232)' }}>
-        <div className="max-w-5xl mx-auto px-5 sm:px-6 pt-12 sm:pt-16 pb-4 text-center">
+      <div id="donate" style={{ backgroundColor: 'rgb(245,240,232)' }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 pt-12 sm:pt-16 pb-4 text-center">
           <div className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'rgb(139,115,85)' }}>Every Contribution Counts</div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black mb-3" style={{ color: 'rgb(52,40,24)', fontFamily: "'Lora', serif" }}>Donate Now</h2>
           <p className="text-sm sm:text-base max-w-xl mx-auto leading-relaxed" style={{ color: 'rgb(107,91,62)' }}>
@@ -103,7 +103,7 @@ export default function GetInvolved() {
         </div>
 
         {/* ── 3 Cards ── */}
-        <div className="max-w-5xl mx-auto px-5 sm:px-6 pb-14 sm:pb-20 pt-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 pb-14 sm:pb-20 pt-8">
           <div className="flex justify-center">
 
             {/* Card 1: Get in Touch — centred, max width */}
@@ -159,8 +159,8 @@ export default function GetInvolved() {
       </div>
 
       {/* ── Why Donate ── */}
-      <div className="bg-white py-14 sm:py-20 px-5 sm:px-6">
-        <div className="max-w-5xl mx-auto">
+      <div className="bg-white py-14 sm:py-20 px-5 sm:px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <div className="text-xs font-bold uppercase tracking-widest text-marigold mb-3">Make a Lasting Impact</div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Why Donate to MSS Charitable Trust?</h2>

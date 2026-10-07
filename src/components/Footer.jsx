@@ -34,7 +34,7 @@ const YouTubeIcon = () => (
 export default function Footer() {
   return (
     <footer className="bg-cream border-t border-gray-200">
-      <div className="max-w-4xl mx-auto px-6 py-16 text-center">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 py-16 text-center">
 
         {/* Trust name — large centered heading */}
         <h2
@@ -64,20 +64,20 @@ export default function Footer() {
 
         {/* Social icons */}
         <div className="flex justify-center items-center gap-5 mb-10">
-          <a href="#" aria-label="Facebook" className="transition-colors hover:opacity-70" style={{ color: '#1A5C38' }}>
+          <a href="#" aria-label="Facebook (coming soon)" title="Coming soon" onClick={e => e.preventDefault()} className="transition-colors hover:opacity-70 cursor-not-allowed opacity-50" style={{ color: '#1A5C38' }}>
             <FacebookIcon />
           </a>
-          <a href="#" aria-label="Instagram" className="transition-colors hover:opacity-70" style={{ color: '#1A5C38' }}>
+          <a href="#" aria-label="Instagram (coming soon)" title="Coming soon" onClick={e => e.preventDefault()} className="transition-colors hover:opacity-70 cursor-not-allowed opacity-50" style={{ color: '#1A5C38' }}>
             <InstagramIcon />
           </a>
-          <a href="#" aria-label="YouTube" className="transition-colors hover:opacity-70" style={{ color: '#1A5C38' }}>
+          <a href="#" aria-label="YouTube (coming soon)" title="Coming soon" onClick={e => e.preventDefault()} className="transition-colors hover:opacity-70 cursor-not-allowed opacity-50" style={{ color: '#1A5C38' }}>
             <YouTubeIcon />
           </a>
         </div>
 
         {/* Copyright */}
         <p className="text-sm mb-4" style={{ color: '#7A9E89' }}>
-          © 2024 MSS Charitable Trust. All rights reserved.
+          © {new Date().getFullYear()} MSS Charitable Trust. All rights reserved.
         </p>
 
         {/* Privacy & Terms */}

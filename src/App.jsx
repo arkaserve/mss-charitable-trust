@@ -48,6 +48,9 @@ function ScrollToTop() {
 function Layout() {
   const [donateOpen, setDonateOpen] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => { setNavOpen(false) }, [location.pathname])
 
   useEffect(() => {
     document.body.style.overflow = (donateOpen || navOpen) ? 'hidden' : ''
@@ -77,7 +80,7 @@ function Layout() {
       <Footer />
       <DonateModal open={donateOpen} onClose={() => setDonateOpen(false)} />
       <Link
-        to="/get-involved"
+        to="/get-involved#donate"
         className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 bg-marigold hover:bg-marigold-dark text-white font-bold text-sm px-5 py-3.5 rounded-full shadow-xl transition-colors duration-200 min-h-[48px] touch-manipulation"
         aria-label="Donate"
       >

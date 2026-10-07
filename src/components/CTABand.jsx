@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function CTABand() {
   return (
     <div className="bg-forest py-16">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 text-center">
         <h2 className="text-3xl md:text-4xl text-white mb-4">
           Be the Reason Someone Smiles Today
         </h2>
@@ -15,7 +15,7 @@ export default function CTABand() {
             Get in Touch
           </Link>
           <Link
-            to="/get-involved"
+            to="/get-involved#donate"
             className="border border-white/50 text-white font-bold px-8 py-3.5 rounded text-sm hover:bg-white/10 transition-colors"
           >
             Donate Now →

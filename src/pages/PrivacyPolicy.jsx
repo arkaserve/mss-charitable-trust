@@ -2,7 +2,7 @@ import LegalLayout, { Section } from '../components/LegalLayout'
 
 export default function PrivacyPolicy() {
   return (
-    <LegalLayout title="Privacy Policy" updated="January 2024">
+    <LegalLayout title="Privacy Policy" updated="October 2026">
 
       <Section title="1. Who We Are">
         <p>

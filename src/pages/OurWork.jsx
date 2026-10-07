@@ -84,7 +84,7 @@ export default function OurWork() {
           }}
         />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,34,24,0.96) 0%, rgba(8,34,24,0.65) 50%, rgba(8,34,24,0.2) 100%)' }} />
-        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 pb-8 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 pb-8 w-full">
           <h1 className="text-2xl sm:text-3xl md:text-4xl text-white font-black leading-tight mb-2 whitespace-nowrap" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.4)' }}>
             What We Do
           </h1>
@@ -93,7 +93,7 @@ export default function OurWork() {
 
       {/* ── Sub-nav ── */}
       <div className="sticky top-16 z-30 bg-forest-deep border-b border-white/10 overflow-x-auto">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
           <div className="flex gap-0 min-w-max">
             {subNav.map(s => {
               const id = s.href.replace('#', '')
@@ -129,7 +129,7 @@ export default function OurWork() {
           id={p.id}
           className={`py-12 scroll-mt-28 ${i % 2 === 0 ? 'bg-cream' : 'bg-white'}`}
         >
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
             {p.subPrograms ? (
               /* ── Sub-program cards layout (Healthcare) ── */
               <div>
@@ -225,7 +225,7 @@ export default function OurWork() {
       ))}
 
       {/* ── CTA ── */}
-      <div className="py-16 px-6 text-center" style={{ backgroundColor: 'rgb(82,68,42)' }}>
+      <div className="py-16 px-5 sm:px-8 lg:px-16 text-center" style={{ backgroundColor: 'rgb(82,68,42)' }}>
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4" style={{ fontFamily: "'Lora', serif" }}>
             Ready to make a difference?
