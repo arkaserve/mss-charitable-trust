@@ -1,6 +1,8 @@
 import LegalLayout, { Section } from '../components/LegalLayout'
+import { useSEO } from '../hooks/useSEO'
 
 export default function TermsOfUse() {
+  useSEO('terms-of-use')
   return (
     <LegalLayout title="Terms of Use" updated="October 2026">
 

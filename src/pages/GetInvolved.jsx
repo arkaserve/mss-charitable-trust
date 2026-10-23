@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useSEO } from '../hooks/useSEO'
 
 const PhoneIcon = () => (
   <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -64,6 +65,7 @@ const stats = [
 ]
 
 export default function GetInvolved() {
+  useSEO('get-involved')
   return (
     <>
       {/* ── Hero ── */}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useSEO } from '../hooks/useSEO'
 
 const subNav = [
   { href: '#in-memory',      label: 'In Memory'        },
@@ -29,6 +30,7 @@ const values = [
 
 
 export default function AboutUs() {
+  useSEO('about')
   const [activeId, setActiveId] = useState('in-memory')
 
   useEffect(() => {

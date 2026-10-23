@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useSEO } from '../hooks/useSEO'
 
 const INIT = { full_name: '', email: '', phone: '', purpose: '', message: '' }
 
@@ -22,6 +23,7 @@ const PinIcon = () => (
 )
 
 export default function Contact() {
+  useSEO('contact')
   const [form, setForm]     = useState(INIT)
   const [status, setStatus] = useState(null)
 

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useSEO } from '../hooks/useSEO'
 
 const photos = [
   /* ── Community Meals ── */
@@ -34,6 +35,7 @@ const TABS = [
 ]
 
 export default function PhotoGallery() {
+  useSEO('gallery')
   const [lightbox, setLightbox]   = useState(null)
   const [activeTab, setActiveTab] = useState('all')
 

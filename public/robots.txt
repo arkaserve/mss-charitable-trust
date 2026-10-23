@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://msscharitabletrust.org/sitemap.xml
+Sitemap: https://msscharitabletrust.org/sitemap1.xml

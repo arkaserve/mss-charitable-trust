@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useSEO } from '../hooks/useSEO'
 import Hero from '../components/Hero'
 import Logo from '../components/Logo'
 
@@ -49,6 +50,7 @@ const testimonials = [
 ]
 
 export default function Home({ openDonate }) {
+  useSEO('home')
   return (
     <>
       {/* 1 ── Hero slider */}

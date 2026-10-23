@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useSEO } from '../hooks/useSEO'
 
 const subNav = [
   { href: '#education', label: 'Education Support' },
@@ -54,6 +55,7 @@ const programs = [
 ]
 
 export default function OurWork() {
+  useSEO('our-work')
   const [activeId, setActiveId] = useState('education')
 
   useEffect(() => {
